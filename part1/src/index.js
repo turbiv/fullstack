@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
-const Button = (props) =>{
+const Button = ({handleClick, rating}) =>{
   return(
-    <button onClick={props.handleClick}>
-      {props.rating}
+    <button onClick={handleClick}>
+      {rating}
     </button>
   );
 };
