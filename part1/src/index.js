@@ -14,6 +14,7 @@ const Button = ({handleClick, text}) =>{
 const App = (props) => {
   const [selected, setSelected] = useState('If it hurts, do it more often');
   const [votes, setVotes] = useState([0,0,0,0,0,0,0]);
+  const randomanecdote = Math.floor(Math.random()*props.anecdotes.length);
 
   const placevote = () =>{
     const copy = [...votes];
@@ -41,7 +42,7 @@ const App = (props) => {
       {selected}
       <p>Current votes on this anecdote: {votes[props.anecdotes.indexOf(selected)]}</p>
       <p>
-        <Button handleClick={() => setSelected(props.anecdotes[Math.floor(Math.random()*props.anecdotes.length)])} text={"Next anecdote"} />
+        <Button handleClick={() => setSelected(props.anecdotes[randomanecdote])} text={"Next anecdote"} />
         <Button handleClick={() => setVotes(placevote())} text={"Vote"} />
       </p>
       <Topanecdote/>
