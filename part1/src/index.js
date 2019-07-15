@@ -9,27 +9,42 @@ const Button = ({handleClick, text}) =>{
   );
 };
 
+
+
 const App = (props) => {
   const [selected, setSelected] = useState('If it hurts, do it more often');
-  const [votes, setVotes] = useState({ 0:0,1:0,2:0,3:0,4:0,5:0,6:0});
+  const [votes, setVotes] = useState([0,0,0,0,0,0,0]);
 
   const placevote = () =>{
-    votes[props.anecdotes.indexOf(selected)] += 1;
-    return votes
+    const copy = [...votes];
+    copy[props.anecdotes.indexOf(selected)] +=1;
+    return copy
   };
 
-  const totalvotes = () =>{
-    return votes[props.anecdotes.indexOf(selected)]
+  const Topanecdote = () =>{
+    const copy = [...votes];
+    let maxvote = copy.indexOf(Math.max(...copy));
+    console.log(maxvote);
+
+    return(
+        <div>
+          <h1>Anecdote with most votes</h1>
+          <p>{anecdotes[maxvote]}</p>
+          <p>Votes: {copy[maxvote]}</p>
+        </div>
+    );
   };
 
   return (
     <div>
+      <h1>Anecdote of the day</h1>
       {selected}
-      <p>Current votes on this anecdote: {votes[0]}</p>
+      <p>Current votes on this anecdote: {votes[props.anecdotes.indexOf(selected)]}</p>
       <p>
         <Button handleClick={() => setSelected(props.anecdotes[Math.floor(Math.random()*props.anecdotes.length)])} text={"Next anecdote"} />
         <Button handleClick={() => setVotes(placevote())} text={"Vote"} />
       </p>
+      <Topanecdote/>
     </div>
   );
 };
