@@ -4,20 +4,21 @@ import axios from 'axios'
 
 
 const Rendercountries = ({countries, filter}) =>{
+
     const filteredcountires = countries.map(country =>{
        if(country.name.includes(filter)){
-           return country.name
+           return {name: country.name, population: country.population, languages: country.languages.map(lang => lang.name)}
        }
-    });
+    }).filter(n => n);
+    console.log(filteredcountires);
 
-    console.log(filteredcountires.filter(n => n));
-
-    if(filteredcountires.filter(n => n).length <= 10){
-        const c = filteredcountires.filter(n => n).map(country => <p>{country}</p>);
-        return(c);
+    if(filteredcountires.length <= 10){
+        const listcountries = filteredcountires.map(country => <p>{country.name}</p>);
+        console.log(listcountries);
+        return(listcountries);
     }
 
-    return(<p>Too many countries, try searching more</p>);
+    return(<p>Too many countries, try another search keyword</p>);
 };
 
 const Searchfilter = ({handle, value}) =>{
@@ -38,7 +39,7 @@ const App = () => {
         axios
             .get('https://restcountries.eu/rest/v2/all')
             .then(response =>{
-                console.log(response.data)
+                console.log(response.data);
                 setCountry(response.data)
             })
     },[]);
