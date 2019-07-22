@@ -3,12 +3,21 @@ import ReactDOM from "react-dom";
 import axios from 'axios'
 
 
-const Rendercountries = ({countires, filter}) =>{
-    return(countires.map(country => {
-        if(country.name.includes(filter)){
-            return(<p>{country.name}</p>)
-        }
-    }));
+const Rendercountries = ({countries, filter}) =>{
+    const filteredcountires = countries.map(country =>{
+       if(country.name.includes(filter)){
+           return country.name
+       }
+    });
+
+    console.log(filteredcountires.filter(n => n));
+
+    if(filteredcountires.filter(n => n).length <= 10){
+        const c = filteredcountires.filter(n => n).map(country => <p>{country}</p>);
+        return(c);
+    }
+
+    return(<p>Too many countries, try searching more</p>);
 };
 
 const Searchfilter = ({handle, value}) =>{
@@ -43,7 +52,7 @@ const App = () => {
         <div>
             <h2>Country finder</h2>
             <Searchfilter handle={handleFilterChange} value={filter}/>
-            <Rendercountries countires={country} filter={filter}/>
+            <Rendercountries countries={country} filter={filter}/>
         </div>
     )
 };
