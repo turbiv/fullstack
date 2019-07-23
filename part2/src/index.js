@@ -70,7 +70,7 @@ const Currentweather = ({city}) =>{
       })
       .then(response => {
         console.log(response.data)
-        return setWeather(response.data)});
+        return setWeather(response.data.current)});
     console.log(weather)
   },[]);
   return(<p>Test</p>)
