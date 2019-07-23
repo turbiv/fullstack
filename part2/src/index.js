@@ -65,19 +65,16 @@ const Currentweather = ({city}) =>{
     axios
       .get('https://api.apixu.com/v1/current.json?key=750b41845a5141c8912133526192307',{
         params:{
-          q: 'Helsinki'
+          q: city
         }
       })
-      .then(response => {
-        console.log(response.data)
-        return setWeather(response.data.current)});
-    console.log(weather)
+      .then(response => setWeather(response.data.current));
   },[]);
-  return(<p>Test</p>)
-/*  return(<div>
-    <p>Temperature: {weather.current.temp_c}</p>
-    <p>Wind: {weather.current.wind_kph} kph direction {weather.current.wind_dir}</p>
-  </div>)*/
+  console.log(weather.condition.icon)
+  return(<div>
+    <p>Temperature: {weather.temp_c}</p>
+    <p>Wind: {weather.wind_kph} kph direction {weather.wind_dir}</p>
+  </div>)
 };
 
 const App = () => {
