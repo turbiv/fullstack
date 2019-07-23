@@ -9,62 +9,85 @@ const Countryinfo = ({filteredcountires}) =>{
         <p>Population: {filteredcountires.population}</p>
         <h2>Languages</h2>
         <ul>
-            {filteredcountires.languages.map((lang, i) => <li key={i}>{lang}</li>)}
+          {filteredcountires.languages.map((lang, i) => <li key={i}>{lang.name}</li>)}
         </ul>
     </div>)
 };
 
 const Rendercountries = ({countries, filter}) =>{
-    const [infostatus, setInfo] = useState(false);
-    const [countrybuttonid, setCountryButtonId] = useState(undefined);
+  const [countryMoreInfo, setCountryMoreInfo] = useState(undefined);
 
-    const filteredcountires = countries.map(country =>{
-       if(country.name.includes(filter)){
-           return {name: country.name, population: country.population, languages: country.languages.map(lang => lang.name)}
-       }
-    }).filter(n => n);
+  const filteredcountires = countries.filter(country => country.name.includes(filter) );
 
-    const handleClick = (e) =>{
-        setInfo(true);
-        setCountryButtonId(e.target.id);
-    };
-
-
-    if(filteredcountires.length === 1){
-        return(<Countryinfo filteredcountires={filteredcountires[0]}/>)
+  const showcountries = () => {
+    if (filteredcountires.length <= 10) {
+      return filteredcountires.map((country, i) =>{
+        return <p key={i}>{country.name}
+          <button onClick={() => setCountryMoreInfo(country)} >Show</button></p>
+        }
+      );
+    }else{
+      return(<p>Try being more specific with the search</p>);
     }
+  };
 
-    if(infostatus){
-        return(<Countryinfo filteredcountires={filteredcountires[countrybuttonid]}/>)
-    }
+  if(filteredcountires.length === 1){
+    return(<Countryinfo filteredcountires={filteredcountires[0]}/>) // TODO plural
+  }
 
-    if(filteredcountires.length <= 10){
-        const listcountries = filteredcountires.map((country, i) => <p key={i}>{country.name} <button id={i} onClick={handleClick}>Press for more info</button></p>);
-        return(listcountries);
-    }
-
-    return(<p>Too many countries, try another search keyword</p>);
+  if(countryMoreInfo){
+    return(<div>
+      {showcountries()}
+      <Countryinfo filteredcountires={countryMoreInfo}/>
+      <Currentweather city={countryMoreInfo.capital}/>
+    </div>)
+  }else{
+    return(<div>{showcountries()}</div>)
+  }
 };
 
 const Searchfilter = ({handle, value}) =>{
-    return(
-        <form>
-            <div>
-                filter shown with<input onChange={handle} value={value}/>
-            </div>
-        </form>);
+  const preventdefault = (e) =>{
+    e.preventDefault()
+  };
+
+  return(
+      <form onSubmit={preventdefault}>
+          <div>
+              filter shown with<input onChange={handle} value={value}/>
+          </div>
+      </form>);
+};
+
+const Currentweather = ({city}) =>{
+  const [weather, setWeather] = useState({});
+  useEffect(() =>{
+    axios
+      .get('https://api.apixu.com/v1/current.json?key=750b41845a5141c8912133526192307',{
+        params:{
+          q: 'Helsinki'
+        }
+      })
+      .then(response => {
+        console.log(response.data)
+        return setWeather(response.data)});
+    console.log(weather)
+  },[]);
+  return(<p>Test</p>)
+/*  return(<div>
+    <p>Temperature: {weather.current.temp_c}</p>
+    <p>Wind: {weather.current.wind_kph} kph direction {weather.current.wind_dir}</p>
+  </div>)*/
 };
 
 const App = () => {
-    const [country, setCountry] = useState([]);
+    const [country, setCountry] = useState([]); // TODO plural!
     const [filter,setFilter] = useState('');
 
     useEffect(() =>{
         axios
             .get('https://restcountries.eu/rest/v2/all')
-            .then(response =>{
-                setCountry(response.data)
-            })
+            .then(response => setCountry(response.data));
     },[]);
 
 
