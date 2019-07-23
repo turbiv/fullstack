@@ -32,7 +32,10 @@ const Rendercountries = ({countries, filter}) =>{
   };
 
   if(filteredcountires.length === 1){
-    return(<Countryinfo filteredcountires={filteredcountires[0]}/>) // TODO plural
+    return(<div>
+      <Countryinfo filteredcountires={filteredcountires[0]}/>
+      <Currentweather city={filteredcountires[0].capital}/>
+    </div>) // TODO plural
   }
 
   if(countryMoreInfo){
@@ -61,6 +64,7 @@ const Searchfilter = ({handle, value}) =>{
 
 const Currentweather = ({city}) =>{
   const [weather, setWeather] = useState({});
+  const [weatherImage, setWeatherImage] = useState({});
   useEffect(() =>{
     axios
       .get('https://api.apixu.com/v1/current.json?key=750b41845a5141c8912133526192307',{
@@ -68,11 +72,14 @@ const Currentweather = ({city}) =>{
           q: city
         }
       })
-      .then(response => setWeather(response.data.current));
+      .then(response => {
+        setWeather(response.data.current);
+        setWeatherImage(response.data.current.condition.icon);
+      })
   },[]);
-  console.log(weather.condition.icon)
   return(<div>
     <p>Temperature: {weather.temp_c}</p>
+    <img alt={""} src={weatherImage} />
     <p>Wind: {weather.wind_kph} kph direction {weather.wind_dir}</p>
   </div>)
 };
