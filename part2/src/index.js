@@ -1,109 +1,133 @@
 import React, { useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
-import axios from 'axios'
+import Persons from './services/Persons'
 
-const Countryinfo = ({filteredcountires}) =>{
-    return(<div>
-        <h1>Country info</h1>
-        <p>Name: {filteredcountires.name}</p>
-        <p>Population: {filteredcountires.population}</p>
-        <h2>Languages</h2>
-        <ul>
-          {filteredcountires.languages.map((lang, i) => <li key={i}>{lang.name}</li>)}
-        </ul>
-    </div>)
-};
 
-const Rendercountries = ({countries, filter}) =>{
-  const [countryMoreInfo, setCountryMoreInfo] = useState(undefined);
+const Renderpersons = ({persons, filter, handleDelete}) =>{
 
-  const filteredcountires = countries.filter(country => country.name.includes(filter) );
+  return(persons.map(person => {
+    if(person.name.includes(filter)){
 
-  const showcountries = () => {
-    if (filteredcountires.length <= 10) {
-      return filteredcountires.map((country, i) =>{
-        return <p key={i}>{country.name}
-          <button onClick={() => setCountryMoreInfo(country)} >Show</button></p>
-        }
-      );
-    }else{
-      return(<p>Try being more specific with the search</p>);
+      return(<p>{person.name + " " + person.number} <button id={person.id} value={person.name} onClick={handleDelete}>Delete</button></p>)
     }
-  };
-
-  if(filteredcountires.length === 1){
-    return(<div>
-      <Countryinfo filteredcountires={filteredcountires[0]}/>
-      <Currentweather city={filteredcountires[0].capital}/>
-    </div>) // TODO plural
-  }
-
-  if(countryMoreInfo){
-    return(<div>
-      {showcountries()}
-      <Countryinfo filteredcountires={countryMoreInfo}/>
-      <Currentweather city={countryMoreInfo.capital}/>
-    </div>)
-  }else{
-    return(<div>{showcountries()}</div>)
-  }
+  }));
 };
 
 const Searchfilter = ({handle, value}) =>{
-  const preventdefault = (e) =>{
-    e.preventDefault()
-  };
-
   return(
-      <form onSubmit={preventdefault}>
-          <div>
-              filter shown with<input onChange={handle} value={value}/>
-          </div>
-      </form>);
+  <form>
+    <div>
+      filter shown with<input onChange={handle} value={value}/>
+    </div>
+  </form>);
 };
 
-const Currentweather = ({city}) =>{
-  const [weather, setWeather] = useState({});
-  const [weatherImage, setWeatherImage] = useState({});
-  useEffect(() =>{
-    axios
-      .get('https://api.apixu.com/v1/current.json?key=750b41845a5141c8912133526192307',{
-        params:{
-          q: city
-        }
-      })
-      .then(response => {
-        setWeather(response.data.current);
-        setWeatherImage(response.data.current.condition.icon);
-      })
-  },[]);
-  return(<div>
-    <p>Temperature: {weather.temp_c}</p>
-    <img alt={""} src={weatherImage} />
-    <p>Wind: {weather.wind_kph} kph direction {weather.wind_dir}</p>
-  </div>)
+const Addpeople = ({onsubmit, onNameChange, onNumberChange, namevalue, numbervalue}) =>{
+  return(
+  <form onSubmit={onsubmit}>
+    <div>
+      name: <input onChange={onNameChange} value={namevalue}/>
+    </div>
+    <div>number: <input onChange={onNumberChange} value={numbervalue}/></div>
+    <div>
+      <button type="submit">add</button>
+    </div>
+  </form>);
 };
 
 const App = () => {
-    const [country, setCountry] = useState([]); // TODO plural!
+  const [persons, setPersons] = useState([]);
+    const [newName, setNewName ] = useState('');
+    const [newNumber,setNewNumber] = useState('');
     const [filter,setFilter] = useState('');
 
     useEffect(() =>{
-        axios
-            .get('https://restcountries.eu/rest/v2/all')
-            .then(response => setCountry(response.data));
+      console.log("effect is in use");
+      Persons
+        .getAllPersons()
+        .then(response => setPersons(response))
     },[]);
 
+    const addPerson = (event) =>{
+      event.preventDefault();
+      if(newNumber.length === 0 || newName.length === 0){
+        alert("Both inputs have to be filled in");
+        setNewNumber('');
+        setNewName('');
+        return
+      }
+
+      if(persons.some(e => e.number === newNumber)){
+
+
+        setNewNumber('');
+        return
+      }
+
+      if(persons.some(e => e.name === newName)){
+        alert(newName + " is in the phonebook");
+        if(window.confirm(newName + "is already added to phonebook, replace the old number with a new one?")){
+
+          const updateperson = () =>{ persons.find((person) =>{
+            if(person.name === newName) {
+              const personel = persons[persons.indexOf(person.name)];
+              return {id: personel.id , number: personel.number, name: personel.name}
+            }})
+          };
+
+          const newnumber = {updateperson};
+
+          Persons
+            .updatePersonNumber(newNumber, updateperson().id, newnumber)
+            .then(response => console.log(response))
+        }
+
+        setNewName('');
+        return
+      }
+
+      const personobj = {name: newName, number: newNumber};
+      Persons
+        .addPerson(personobj)
+        .then(response =>{
+          setPersons(persons.concat(response));
+          setNewName('');
+          setNewNumber('');
+        })
+    };
+
+    const handlePersonChange = (event) =>{
+        setNewName(event.target.value)
+    };
+
+    const handleNumberChange = (event) =>{
+      setNewNumber(event.target.value)
+    };
 
     const handleFilterChange = (event) =>{
-        setFilter(event.target.value)
+      setFilter(event.target.value)
+    };
+
+    const handleDelete = (event) =>{
+      const personid = event.target.id;
+
+      if(window.confirm("are you sure you want to delete " + event.target.value )) {
+        Persons
+          .removePerson(personid)
+          .then(response => {
+            setPersons(persons.filter(person => Number(personid) !== person.id))
+          })
+      }
     };
 
     return (
         <div>
-            <h2>Country finder</h2>
+            <h2>Phonebook</h2>
             <Searchfilter handle={handleFilterChange} value={filter}/>
-            <Rendercountries countries={country} filter={filter}/>
+            <h2>Add a new</h2>
+            <Addpeople onsubmit={addPerson} onNameChange={handlePersonChange} onNumberChange={handleNumberChange} namevalue={newName} numbervalue={newNumber}/>
+            <h2>Numbers</h2>
+            <Renderpersons persons={persons} filter={filter} handleDelete={handleDelete}/>
         </div>
     )
 };
