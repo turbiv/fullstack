@@ -3,17 +3,17 @@ import ReactDOM from "react-dom";
 import Persons from './services/Persons'
 
 
-const Renderpersons = ({persons, filter, handleDelete}) =>{
+const RenderPersons = ({persons, filter, handleDelete}) =>{
 
   return(persons.map(person => {
     if(person.name.includes(filter)){
 
-      return(<p>{person.name + " " + person.number} <button id={person.id} value={person.name} onClick={handleDelete}>Delete</button></p>)
+      return(<p key={person.id}>{person.name + " " + person.number} <button id={person.id} value={person.name} onClick={handleDelete}>Delete</button></p>)
     }
   }));
 };
 
-const Searchfilter = ({handle, value}) =>{
+const SearchFilter = ({handle, value}) =>{
   return(
   <form>
     <div>
@@ -22,7 +22,7 @@ const Searchfilter = ({handle, value}) =>{
   </form>);
 };
 
-const Addpeople = ({onsubmit, onNameChange, onNumberChange, namevalue, numbervalue}) =>{
+const AddPeople = ({onsubmit, onNameChange, onNumberChange, namevalue, numbervalue}) =>{
   return(
   <form onSubmit={onsubmit}>
     <div>
@@ -35,11 +35,45 @@ const Addpeople = ({onsubmit, onNameChange, onNumberChange, namevalue, numberval
   </form>);
 };
 
+const Notification = ({name, error}) =>{
+  if(name === null){
+    return null
+  }
+
+  const color = error ? "red" : "green";
+
+  const notificationStyle = {
+    color: color,
+    background: "lightgrey",
+    fontSize: 20,
+    borderStyle: "solid",
+    borderRadius: 5,
+    padding: 10,
+    marginBottom: 10
+  };
+
+  const notificationtext = () =>{
+    if(error){
+      return <p>Information of {name} has already been removed from server</p>
+    }else{
+      return <p>{name} was added to the phonebook</p>
+    }
+  };
+
+  return(
+  <div style={notificationStyle}>
+    {notificationtext()}
+  </div>
+  );
+};
+
 const App = () => {
   const [persons, setPersons] = useState([]);
     const [newName, setNewName ] = useState('');
     const [newNumber,setNewNumber] = useState('');
     const [filter,setFilter] = useState('');
+    const [notificationName, setNotificationName] = useState(null);
+    const [errorState, setErrorState] = useState(false);
 
     useEffect(() =>{
       console.log("effect is in use");
@@ -58,32 +92,28 @@ const App = () => {
       }
 
       if(persons.some(e => e.number === newNumber)){
-
-
         setNewNumber('');
         return
       }
 
-      if(persons.some(e => e.name === newName)){
-        alert(newName + " is in the phonebook");
-        if(window.confirm(newName + "is already added to phonebook, replace the old number with a new one?")){
+      if(persons.some(e => e.name === newName)) {
+        if (window.confirm(newName + "is already added to phonebook, replace the old number with a new one?")) {
+          const getperson = persons.find(person => {
+            if (person.name === newName) return person
+          });
 
-          const updateperson = () =>{ persons.find((person) =>{
-            if(person.name === newName) {
-              const personel = persons[persons.indexOf(person.name)];
-              return {id: personel.id , number: personel.number, name: personel.name}
-            }})
-          };
-
-          const newnumber = {updateperson};
+          const newnumber = {...getperson, number: newNumber};
 
           Persons
-            .updatePersonNumber(newNumber, updateperson().id, newnumber)
-            .then(response => console.log(response))
+            .updatePersonNumber(newNumber, getperson.id, newnumber)
+            .then(response => setPersons(persons.map(person => person.id !== getperson.id ? person : response)));
+          setNewName('');
+          setNewNumber('');
+          return
+        }else{
+          setNewNumber('');
+          return
         }
-
-        setNewName('');
-        return
       }
 
       const personobj = {name: newName, number: newNumber};
@@ -91,6 +121,10 @@ const App = () => {
         .addPerson(personobj)
         .then(response =>{
           setPersons(persons.concat(response));
+          setNotificationName(newName);
+          setTimeout(() =>{
+            setNotificationName(null);
+          }, 5000);
           setNewName('');
           setNewNumber('');
         })
@@ -110,24 +144,33 @@ const App = () => {
 
     const handleDelete = (event) =>{
       const personid = event.target.id;
+      const personname = event.target.value;
 
       if(window.confirm("are you sure you want to delete " + event.target.value )) {
         Persons
           .removePerson(personid)
           .then(response => {
             setPersons(persons.filter(person => Number(personid) !== person.id))
-          })
+          }).catch(error =>{
+          setNotificationName(personname);
+          setErrorState(true);
+            setTimeout(() =>{
+              setNotificationName(null);
+              setErrorState(false)
+            }, 5000);
+            setPersons(persons.filter(person => Number(personid) !== person.id))})
       }
     };
 
     return (
         <div>
             <h2>Phonebook</h2>
-            <Searchfilter handle={handleFilterChange} value={filter}/>
+            <SearchFilter handle={handleFilterChange} value={filter}/>
             <h2>Add a new</h2>
-            <Addpeople onsubmit={addPerson} onNameChange={handlePersonChange} onNumberChange={handleNumberChange} namevalue={newName} numbervalue={newNumber}/>
+            <Notification name={notificationName} error={errorState}/>
+            <AddPeople onsubmit={addPerson} onNameChange={handlePersonChange} onNumberChange={handleNumberChange} namevalue={newName} numbervalue={newNumber}/>
             <h2>Numbers</h2>
-            <Renderpersons persons={persons} filter={filter} handleDelete={handleDelete}/>
+            <RenderPersons persons={persons} filter={filter} handleDelete={handleDelete}/>
         </div>
     )
 };

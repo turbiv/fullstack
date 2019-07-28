@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
 import axios from 'axios'
 
-const Countryinfo = ({filteredcountires}) =>{
+const CountryInfo = ({filteredcountires}) =>{
     return(<div>
         <h1>Country info</h1>
         <p>Name: {filteredcountires.name}</p>
@@ -14,7 +14,7 @@ const Countryinfo = ({filteredcountires}) =>{
     </div>)
 };
 
-const Rendercountries = ({countries, filter}) =>{
+const RenderCountries = ({countries, filter}) =>{
   const [countryMoreInfo, setCountryMoreInfo] = useState(undefined);
 
   const filteredcountires = countries.filter(country => country.name.includes(filter) );
@@ -33,23 +33,23 @@ const Rendercountries = ({countries, filter}) =>{
 
   if(filteredcountires.length === 1){
     return(<div>
-      <Countryinfo filteredcountires={filteredcountires[0]}/>
-      <Currentweather city={filteredcountires[0].capital}/>
+      <CountryInfo filteredcountires={filteredcountires[0]}/>
+      <CurrentWeather city={filteredcountires[0].capital}/>
     </div>) // TODO plural
   }
 
   if(countryMoreInfo){
     return(<div>
       {showcountries()}
-      <Countryinfo filteredcountires={countryMoreInfo}/>
-      <Currentweather city={countryMoreInfo.capital}/>
+      <CountryInfo filteredcountires={countryMoreInfo}/>
+      <CurrentWeather city={countryMoreInfo.capital}/>
     </div>)
   }else{
     return(<div>{showcountries()}</div>)
   }
 };
 
-const Searchfilter = ({handle, value}) =>{
+const SearchFilter = ({handle, value}) =>{
   const preventdefault = (e) =>{
     e.preventDefault()
   };
@@ -62,7 +62,7 @@ const Searchfilter = ({handle, value}) =>{
       </form>);
 };
 
-const Currentweather = ({city}) =>{
+const CurrentWeather = ({city}) =>{
   const [weather, setWeather] = useState({});
   const [weatherImage, setWeatherImage] = useState({});
   useEffect(() =>{
@@ -85,13 +85,13 @@ const Currentweather = ({city}) =>{
 };
 
 const App = () => {
-    const [country, setCountry] = useState([]); // TODO plural!
+    const [countries, setCountries] = useState([]);
     const [filter,setFilter] = useState('');
 
     useEffect(() =>{
         axios
             .get('https://restcountries.eu/rest/v2/all')
-            .then(response => setCountry(response.data));
+            .then(response => setCountries(response.data));
     },[]);
 
 
@@ -102,8 +102,8 @@ const App = () => {
     return (
         <div>
             <h2>Country finder</h2>
-            <Searchfilter handle={handleFilterChange} value={filter}/>
-            <Rendercountries countries={country} filter={filter}/>
+            <SearchFilter handle={handleFilterChange} value={filter}/>
+            <RenderCountries countries={countries} filter={filter}/>
         </div>
     )
 };
