@@ -8,7 +8,7 @@ const RenderPersons = ({persons, filter, handleDelete}) =>{
   return(persons.map(person => {
     if(person.name.includes(filter)){
 
-      return(<p key={person.id}>{person.name + " " + person.number} <button id={person.id} value={person.name} onClick={handleDelete}>Delete</button></p>)
+      return(<p key={person.id}>{`${person.name} ${person.number}`} <button id={person.id} value={person.name} onClick={handleDelete}>Delete</button></p>)
     }
   }));
 };
@@ -146,7 +146,7 @@ const App = () => {
       const personid = event.target.id;
       const personname = event.target.value;
 
-      if(window.confirm("are you sure you want to delete " + event.target.value )) {
+      if(window.confirm(`are you sure you want to delete ${event.target.value}` )) {
         Persons
           .removePerson(personid)
           .then(response => {

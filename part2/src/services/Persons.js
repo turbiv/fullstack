@@ -12,12 +12,12 @@ const addPerson = (personobj) =>{
 };
 
 const removePerson = (id) =>{
-  const makerequest = axios.delete(url + "/" + id);
+  const makerequest = axios.delete(`${url}/${id}`);
   return makerequest.then(response => response)
 };
 
 const updatePersonNumber = (number, id, personobject) =>{
-  const makerequest = axios.put(url + "/" + id, personobject);
+  const makerequest = axios.put(`${url}/${id}`, personobject);
   return makerequest.then(response => response.data)
 };
 

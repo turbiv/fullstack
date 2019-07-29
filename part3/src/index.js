@@ -1,6 +1,50 @@
+<<<<<<< Updated upstream
 import React, { useState, useEffect } from 'react'
 import ReactDOM from "react-dom";
 import Persons from './services/Persons'
+=======
+const express = require('express');
+const app = express();
+const morgan = require('morgan');
+const bodyParser = require('body-parser');
+
+
+app.use(bodyParser.json());
+
+app.use(morgan('tiny'));
+
+let persons = [
+  {
+    "name": "Arto Hellas",
+    "number": "040-5801516",
+    "id": 1
+  },
+  {
+    "name": "Ada Lovelace",
+    "number": "39-44-5323523",
+    "id": 2
+  },
+  {
+    "name": "Dan Abramov",
+    "number": "12-43-234345",
+    "id": 3
+  },
+  {
+    "name": "Mary Poppendieck",
+    "number": "39-23-6423122",
+    "id": 4
+  }
+];
+
+app.get('/api/persons/:id', (request, response) => {
+  const id = Number(request.params.id);
+  const person = persons.find(note => note.id === id);
+  if(person){
+    response.json(person)
+  }else{
+    response.status(404).end()
+  }
+>>>>>>> Stashed changes
 
 
 const RenderPersons = ({persons, filter, handleDelete}) =>{
@@ -60,12 +104,19 @@ const Notification = ({name, error}) =>{
     }
   };
 
+<<<<<<< Updated upstream
   return(
     <div style={notificationStyle}>
       {notificationtext()}
     </div>
   );
 };
+=======
+  morgan.token('data',(req, res) =>{return req.params[JSON.stringify(newPerson)]});
+  morgan(':data');
+  console.log("Token");
+  response.json(newPerson)
+>>>>>>> Stashed changes
 
 const App = () => {
   const [persons, setPersons] = useState([]);
