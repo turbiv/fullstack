@@ -7,6 +7,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "json-server": "^0.15.0",
+    "mongoose": "^5.6.7",
     "morgan": "^1.9.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -19,7 +20,8 @@
     "watch": "nodemon src\\backend.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "json-server -p3002 db.json"
+    "server": "json-server -p3002 db.json",
+    "mongo": "nodemon src\\mongo.js df478444"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {
