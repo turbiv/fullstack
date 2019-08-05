@@ -1,37 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/backend.js" line="92" mnemonic="9" />
+    <bookmark url="file://$PROJECT_DIR$/src/backend.js" line="88" mnemonic="8" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b6770ccd-1cac-4961-953a-a165080fc7d4" name="Default Changelist" comment="squash! Part 2b">
-      <change beforePath="$PROJECT_DIR$/../heroku/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/codeStyles/codeStyleConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/part2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/part2.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/public/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/serviceWorker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/src/services/Persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/src/services/Persons.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../heroku/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../heroku/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../part2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part2/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../part2/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../part2/src/services/Persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/../part2/src/services/Persons.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Ivan.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/variables.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/backend.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/Persons.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/Persons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/mongo.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -47,8 +29,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1904">
-              <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
+            <state relative-caret-position="266">
+              <caret line="104" column="60" lean-forward="true" selection-start-line="104" selection-start-column="60" selection-end-line="104" selection-end-column="60" />
               <folding>
                 <element signature="e#0#50#0" expanded="true" />
               </folding>
@@ -59,17 +41,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/services/Persons.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Procfile">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="16" selection-start-column="16" selection-end-column="16" />
+            <state relative-caret-position="306">
+              <caret line="18" column="52" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -77,8 +50,26 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/backend.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+            <state relative-caret-position="14">
+              <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/mongo.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/variables.env">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="109" />
             </state>
           </provider>
         </entry>
@@ -110,21 +101,24 @@
         <option value="$PROJECT_DIR$/src/components/Course.js" />
         <option value="$PROJECT_DIR$/db.json" />
         <option value="$PROJECT_DIR$/src/index_part2countries.js" />
-        <option value="$PROJECT_DIR$/src/backend.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/services/Persons.js" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/mongo.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/variables.env" />
+        <option value="$PROJECT_DIR$/src/services/Persons.js" />
+        <option value="$PROJECT_DIR$/src/models/mongo.js" />
+        <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/backend.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-85" />
+    <option name="y" value="-18" />
+    <option name="width" value="1934" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -132,6 +126,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -148,13 +143,18 @@
               <item name="part3" type="b2602c69:ProjectViewProjectNode" />
               <item name="part3" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="part3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="part3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="services" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -168,6 +168,12 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\__GIT\fullstack\part3\src" />
+      <recent name="D:\__GIT\fullstack\part3\src\models" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -197,6 +203,7 @@
       <workItem from="1564261743864" duration="13458000" />
       <workItem from="1564398706825" duration="108000" />
       <workItem from="1564399515193" duration="6840000" />
+      <workItem from="1564780247760" duration="19290000" />
     </task>
     <task id="LOCAL-00001" summary="Part 2b">
       <created>1563494240976</created>
@@ -209,7 +216,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66404000" />
+    <option name="totallyTimeSpent" value="85694000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -224,8 +231,8 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4927302" visible="true" weight="0.24973656" />
-      <window_info id="Structure" order="1" sideWeight="0.5072698" side_tool="true" visible="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49117175" visible="true" weight="0.24973656" />
+      <window_info id="Structure" order="1" sideWeight="0.5088282" side_tool="true" visible="true" weight="0.24973656" />
       <window_info id="npm" order="2" sideWeight="0.5014663" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -237,8 +244,8 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.2611051" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32936078" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49947312" visible="true" weight="0.32502708" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -344,41 +351,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1904">
-          <caret line="124" column="25" selection-start-line="124" selection-start-column="25" selection-end-line="124" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/Persons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="5" selection-start-line="2" selection-start-column="5" selection-end-line="2" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="21" lean-forward="true" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
         </state>
       </provider>
     </entry>
@@ -392,10 +368,55 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/variables.env">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="12" lean-forward="true" selection-start-column="12" selection-end-column="109" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="35" lean-forward="true" selection-start-line="26" selection-start-column="35" selection-end-line="26" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="104" column="60" lean-forward="true" selection-start-line="104" selection-start-column="60" selection-end-line="104" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/Persons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="52" selection-start-line="18" selection-start-column="40" selection-end-line="18" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/mongo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="48" lean-forward="true" selection-start-line="5" selection-start-column="48" selection-end-line="5" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/backend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="90" column="38" lean-forward="true" selection-start-line="90" selection-start-column="38" selection-end-line="90" selection-end-column="38" />
+        <state relative-caret-position="14">
+          <caret line="38" column="34" lean-forward="true" selection-start-line="38" selection-start-column="34" selection-end-line="38" selection-end-column="34" />
         </state>
       </provider>
     </entry>

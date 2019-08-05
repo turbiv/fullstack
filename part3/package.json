@@ -5,6 +5,7 @@
   "dependencies": {
     "axios": "^0.19.0",
     "cors": "^2.8.5",
+    "dotenv": "^8.0.0",
     "express": "^4.17.1",
     "json-server": "^0.15.0",
     "mongoose": "^5.6.7",
@@ -21,7 +22,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "json-server -p3002 db.json",
-    "mongo": "nodemon src\\mongo.js df478444"
+    "mongo": "nodemon src\\models\\mongo.js df478444"
   },
   "proxy": "http://localhost:3001",
   "eslintConfig": {

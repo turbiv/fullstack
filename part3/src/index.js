@@ -150,7 +150,7 @@ const App = () => {
       Persons
         .removePerson(personid)
         .then(response => {
-          setPersons(persons.filter(person => Number(personid) !== person.id))
+          setPersons(persons.filter(person => personid !== person.id))
         }).catch(error =>{
         setNotificationName(personname);
         setErrorState(true);
@@ -158,7 +158,7 @@ const App = () => {
           setNotificationName(null);
           setErrorState(false)
         }, 5000);
-        setPersons(persons.filter(person => Number(personid) !== person.id))})
+        setPersons(persons.filter(person => personid !== person.id))})
     }
   };
 
