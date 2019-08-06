@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const uniqueValidator = require('mongoose-unique-validator');
 
 const url = "mongodb+srv://fullstack:df478444@cluster0-vgh1b.mongodb.net/fullstack?retryWrites=true&w=majority";
 console.log(url);
@@ -9,10 +10,19 @@ mongoose.connect(url, { useNewUrlParser: true })
 
 mongoose.set('useFindAndModify', false);
 
-const phoneSchema = new mongoose.Schema({
-  name: String,
-  number: String,
+const phoneSchema = mongoose.Schema({
+  name: {
+    type: String,
+    minlength: 3
+  },
+  number: {
+    type: String,
+    minlength: 8,
+    unique: true
+  }
 });
+
+phoneSchema.plugin(uniqueValidator);
 
 phoneSchema.set('toJSON', {
   transform: (document, returnedObject) => {
