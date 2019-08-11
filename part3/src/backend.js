@@ -8,13 +8,10 @@ const cors = require('cors');
 const Person = require('./models/mongo');
 
 app.use(cors());
-app.use(morgan('tiny'));
-app.use(bodyParser.json());
 
-morgan.token('type', (req, res) =>{
-  console.log(req.headers);
-  console.log(res);
-  return req.headers['content-type']});
+morgan.token('post', () => false);
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post'));
+app.use(bodyParser.json());
 
 app.get('/api/persons/:id', (request, response) => {
   Person.findById(request.params.id)
@@ -48,7 +45,7 @@ app.delete('/api/persons/:id', (req, response , next) =>{
     .catch(error => next(error));
 });
 
-app.post('/api/persons', (req, response) =>{
+app.post('/api/persons', (req, response, next) =>{
   const bodycontent = req.body;
 
   if(!bodycontent.name || !bodycontent.number){
@@ -60,7 +57,12 @@ app.post('/api/persons', (req, response) =>{
     "number": bodycontent.number
   });
 
-  newPerson.save().then(saved => response.json(saved.toJSON()));
+  morgan.token('post',(req, res) => req.method === 'POST' ? JSON.stringify(newPerson) : false);
+
+  newPerson
+    .save()
+    .then(saved => response.json(saved.toJSON()))
+    .catch(error => next(error));
 
 });
 
@@ -69,10 +71,10 @@ app.put('/api/persons/:id', (req, response, next) =>{
   console.log(content.number);
 
   const newperson = {
-    number: content.number
+    number: content.number,
   };
 
-  Person.findByIdAndUpdate(req.params.id, newperson, {new: true})
+  Person.findByIdAndUpdate(req.params.id, newperson, {new: true, runValidators: true, context: 'query' })
     .then(updated =>{
       response.json(updated.toJSON())
     })
@@ -84,7 +86,10 @@ const errorHandler = (error, request, response, next) =>{
 
   if(error.name === "CastError" && error.kind === 'ObjectId'){
     return response.status(400).send({error: "malformatted id"})
+  } else if(error.name === "ValidationError" && (error.errors.number.properties.type === "unique" || error.kind === "unique")){
+    return response.status(400).send({error: error.message})
   }
+
 
   next(error)
 };

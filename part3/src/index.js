@@ -52,17 +52,9 @@ const Notification = ({name, error}) =>{
     marginBottom: 10
   };
 
-  const notificationtext = () =>{
-    if(error){
-      return <p>Information of {name} has already been removed from server</p>
-    }else{
-      return <p>{name} was added to the phonebook</p>
-    }
-  };
-
   return(
     <div style={notificationStyle}>
-      {notificationtext()}
+      <p>{name}</p>
     </div>
   );
 };
@@ -84,15 +76,11 @@ const App = () => {
 
   const addPerson = (event) =>{
     event.preventDefault();
+    console.log(newNumber);
     if(newNumber.length === 0 || newName.length === 0){
       alert("Both inputs have to be filled in");
       setNewNumber('');
       setNewName('');
-      return
-    }
-
-    if(persons.some(e => e.number === newNumber)){
-      setNewNumber('');
       return
     }
 
@@ -106,7 +94,14 @@ const App = () => {
 
         Persons
           .updatePersonNumber(newNumber, getperson.id, newnumber)
-          .then(response => setPersons(persons.map(person => person.id !== getperson.id ? person : response)));
+          .then(response => setPersons(persons.map(person => person.id !== getperson.id ? person : response)))
+          .catch(error => {
+            setNotificationName(error.response.data.error);
+            setErrorState(true);
+            setTimeout(() =>{
+              setNotificationName(null);
+              setErrorState(false);
+            }, 5000)});
         setNewName('');
         setNewNumber('');
         return
@@ -121,7 +116,7 @@ const App = () => {
       .addPerson(personobj)
       .then(response =>{
         setPersons(persons.concat(response));
-        setNotificationName(newName);
+        setNotificationName(`${newName} was added to the phonebook`);
         setTimeout(() =>{
           setNotificationName(null);
         }, 5000);
@@ -152,7 +147,7 @@ const App = () => {
         .then(response => {
           setPersons(persons.filter(person => personid !== person.id))
         }).catch(error =>{
-        setNotificationName(personname);
+        setNotificationName(`${personname} was added to the phonebook`);
         setErrorState(true);
         setTimeout(() =>{
           setNotificationName(null);
