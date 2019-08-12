@@ -9,8 +9,8 @@ const Person = require('./models/mongo');
 
 app.use(cors());
 
-morgan.token('post', () => false);
-app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post'));
+morgan.token('persondetails', () => false);
+app.use(morgan(':method :url :status :res[content-length] - :response-time ms :persondetails'));
 app.use(bodyParser.json());
 
 app.get('/api/persons/:id', (request, response) => {
@@ -56,7 +56,7 @@ app.post('/api/persons', (request, response, next) =>{
     'number': bodycontent.number
   });
 
-  morgan.token('post',(req, res) => req.method === 'POST' ? JSON.stringify(newPerson) : false);
+  morgan.token('persondetails',(req, res) => req.method === 'POST' ? JSON.stringify(newPerson) : false);
 
   newPerson
     .save()
