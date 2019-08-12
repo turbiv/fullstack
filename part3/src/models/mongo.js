@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const uniqueValidator = require('mongoose-unique-validator');
 
-const password = process.env.password;
+const password = process.env.password; //Either have a env variable with a password or manually type it in
 const url = `mongodb+srv://fullstack:${password}@cluster0-vgh1b.mongodb.net/fullstack?retryWrites=true&w=majority`;
 console.log(url);
 
