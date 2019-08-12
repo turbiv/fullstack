@@ -24,8 +24,7 @@ app.get('/api/persons/:id', (request, response) => {
     })
     .catch(error => {
       console.log(error);
-      response.status(400).send({error: "malformatted id"})})
-
+      response.status(400).send({error: 'malformatted id'})})
 });
 
 app.get('/api/persons', (request, response) => {
@@ -39,22 +38,22 @@ app.get('/info', (request, response) => {
   })
 });
 
-app.delete('/api/persons/:id', (req, response , next) =>{
-  Person.findByIdAndRemove(req.params.id)
+app.delete('/api/persons/:id', (request, response , next) =>{
+  Person.findByIdAndRemove(request.params.id)
     .then(result => response.status(204).end())
     .catch(error => next(error));
 });
 
-app.post('/api/persons', (req, response, next) =>{
-  const bodycontent = req.body;
+app.post('/api/persons', (request, response, next) =>{
+  const bodycontent = request.body;
 
   if(!bodycontent.name || !bodycontent.number){
-    return response.status(400).json({error: "Name or number is missing"})
+    return response.status(400).json({error: 'Name or number is missing'})
   }
 
   const newPerson = new Person({
-    "name": bodycontent.name,
-    "number": bodycontent.number
+    'name': bodycontent.name,
+    'number': bodycontent.number
   });
 
   morgan.token('post',(req, res) => req.method === 'POST' ? JSON.stringify(newPerson) : false);
@@ -63,18 +62,16 @@ app.post('/api/persons', (req, response, next) =>{
     .save()
     .then(saved => response.json(saved.toJSON()))
     .catch(error => next(error));
-
 });
 
-app.put('/api/persons/:id', (req, response, next) =>{
-  const content = req.body;
-  console.log(content.number);
+app.put('/api/persons/:id', (request, response, next) =>{
+  const content = request.body;
 
   const newperson = {
     number: content.number,
   };
 
-  Person.findByIdAndUpdate(req.params.id, newperson, {new: true, runValidators: true, context: 'query' })
+  Person.findByIdAndUpdate(request.params.id, newperson, {new: true, runValidators: true, context: 'query' })
     .then(updated =>{
       response.json(updated.toJSON())
     })
@@ -82,14 +79,11 @@ app.put('/api/persons/:id', (req, response, next) =>{
 });
 
 const errorHandler = (error, request, response, next) =>{
-  console.log(error.message);
-
-  if(error.name === "CastError" && error.kind === 'ObjectId'){
+  if(error.name === 'CastError' && error.kind === 'ObjectId'){
     return response.status(400).send({error: "malformatted id"})
-  } else if(error.name === "ValidationError" && (error.errors.number.properties.type === "unique" || error.kind === "unique")){
+  } else if(error.name === 'ValidationError' && (error.errors.number.properties.type === 'unique' || error.kind === 'unique')){
     return response.status(400).send({error: error.message})
   }
-
 
   next(error)
 };
