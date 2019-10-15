@@ -13,9 +13,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "watch": "nodemon src\\backend.js"
+    "watch": "nodemon src\\backend.js",
+    "test": "jest --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"

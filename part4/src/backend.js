@@ -6,10 +6,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require("mongoose");
 
-
 const mongoUrl = "mongodb+srv://fullstack:df478444@cluster0-vgh1b.mongodb.net/test?retryWrites=true&w=majority";
 mongoose.connect(mongoUrl, { useNewUrlParser: true});
-
 
 app.use(cors());
 app.use(bodyParser.json());
