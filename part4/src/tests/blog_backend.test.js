@@ -42,6 +42,27 @@ test('add blog', async () =>{
   expect(newBlogs.body.length).toBe(initialBlogs.body.length + 1)
 });
 
+test('is likes property missing', async () =>{
+  const newblog = {
+    title: 'Testing for react',
+    author: 'Test test',
+    url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
+  };
+
+  await api.post('/api/blogs').send(newblog).expect(201);
+
+  const blogs = await api.get('/api/blogs');
+  expect(blogs.body[6].likes).toBeDefined()
+});
+
+test('must have url and title', async () =>{
+  const newblog = {
+    author: 'Test test'
+  };
+
+  await api.post('/api/blogs').send(newblog).expect(400);
+});
+
 afterAll(() => {
   mongoose.connection.close()
 });

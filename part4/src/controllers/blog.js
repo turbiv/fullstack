@@ -10,6 +10,13 @@ expressRouter.get('/', async (request, response) => {
 });
 
 expressRouter.post('/', async (request, response) => {
+  if((request.body.title === undefined) || (request.body.url === undefined)){
+    response.status(400).send({error: "Bad Request"})
+  }
+  if(request.body.likes === undefined){
+    request.body.likes = 0
+  }
+
   const blog = new mongoBlog(request.body);
 
   const result = await blog.save();

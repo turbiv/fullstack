@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/tests/blog_backend.test.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+            <state relative-caret-position="244">
+              <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -42,8 +42,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controllers/blog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="11" column="18" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="18" />
+            <state relative-caret-position="238">
+              <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -107,7 +107,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-39" />
+    <option name="x" value="26" />
     <option name="y" value="-8" />
     <option name="width" value="1920" />
     <option name="height" value="1040" />
@@ -270,7 +270,7 @@
       <workItem from="1570707915805" duration="8992000" />
       <workItem from="1571127695533" duration="17971000" />
       <workItem from="1571210581201" duration="397000" />
-      <workItem from="1571922957166" duration="11065000" />
+      <workItem from="1571922957166" duration="12924000" />
     </task>
     <task id="LOCAL-00001" summary="Part 2b">
       <created>1563494240976</created>
@@ -283,9 +283,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="blog_backend_test_js - 2019.10.25 at 17h 17m 14s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
-    </history-entry>
     <history-entry file="blog_backend_test_js - 2019.10.25 at 17h 17m 32s.xml">
       <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
@@ -313,9 +310,12 @@
     <history-entry file="blog_backend_test_js - 2019.10.25 at 17h 39m 10s.xml">
       <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
+    <history-entry file="blog_backend_test_js - 2019.10.25 at 23h 34m 32s.xml">
+      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150355000" />
+    <option name="totallyTimeSpent" value="152214000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -540,6 +540,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/controllers/blog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="3" lean-forward="true" selection-start-line="14" selection-start-column="3" selection-end-line="14" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/backend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -547,17 +554,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/controllers/blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="18" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/tests/blog_backend.test.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
+        <state relative-caret-position="244">
+          <caret line="55" column="3" lean-forward="true" selection-start-line="55" selection-start-column="3" selection-end-line="55" selection-end-column="3" />
         </state>
       </provider>
     </entry>
