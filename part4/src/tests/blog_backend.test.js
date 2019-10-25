@@ -3,6 +3,7 @@ const supertest = require('supertest');
 const backend = require('../backend');
 const mongoBlog = require("../models/mongo");
 const blogs = require('./exampleBlogs');
+const listHelper = require('../utils/list_helper');
 
 const premadeListOfBlogs = blogs.premadeListOfBlogs;
 
@@ -61,6 +62,19 @@ test('must have url and title', async () =>{
   };
 
   await api.post('/api/blogs').send(newblog).expect(400);
+});
+
+test("delete blog", async () =>{
+  const getBlog = await listHelper.getBlogs();
+  await api.delete('/api/blogs/' + getBlog[0]._id).expect(204)
+});
+
+test('update likes for blog', async () =>{
+  const newLikes =   {
+    likes: 10
+  };
+  const getBlog = await listHelper.getBlogs();
+  await api.put('/api/blogs/'  + getBlog[0]._id).send(newLikes).expect(200);
 });
 
 afterAll(() => {

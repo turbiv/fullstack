@@ -3,6 +3,7 @@ var _ = require('lodash/core');
 var fp = require('lodash/fp');
 var loadsharray = require('lodash/array');
 var loadshcollection = require('lodash/collection');
+const mongoBlog = require("../models/mongo");
 
 const dummy = (blogs) => {
   return 1
@@ -53,10 +54,15 @@ const mostLikes = blogs =>{
   return {author: result.author, likes: result.likes}
 };
 
+const getBlogs = () =>{
+  return mongoBlog.find({});
+};
+
 module.exports = {
   dummy,
   totalLikes,
   favoriteBlog,
   mostBlogs,
-  mostLikes
+  mostLikes,
+  getBlogs
 };

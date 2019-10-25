@@ -24,4 +24,26 @@ expressRouter.post('/', async (request, response) => {
   response.status(201).json(result)
 });
 
+expressRouter.delete('/:id', async (request, response) => {
+  await mongoBlog.findByIdAndDelete(request.params.id)
+    .catch(error => response.status(400).send({error: error.message}));
+
+  response.status(204).end()
+});
+
+expressRouter.put('/:id', async (request, response) => {
+  const likes = {likes: request.body.likes};
+
+
+  const updated = await mongoBlog.findByIdAndUpdate(request.params.id, likes, {
+    new: true,
+    runValidators: true,
+    context: "query"
+  })
+    .catch(error => response.status(400).send({error: error.message}))
+
+  response.status(200).json(updated.toJSON())
+
+});
+
 module.exports = expressRouter;
