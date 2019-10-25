@@ -15,8 +15,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
-    "watch": "nodemon src\\backend.js",
-    "test": "jest --verbose"
+    "watch": "cross-env NODE_ENV=dev nodemon src\\backend.js",
+    "test": "cross-env NODE_ENV=test jest --verbose"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -34,6 +34,8 @@
     ]
   },
   "devDependencies": {
-    "nodemon": "^1.19.3"
+    "cross-env": "^6.0.3",
+    "nodemon": "^1.19.3",
+    "supertest": "^4.0.2"
   }
 }
