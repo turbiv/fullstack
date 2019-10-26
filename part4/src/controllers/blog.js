@@ -11,7 +11,7 @@ expressRouter.get('/', async (request, response) => {
 
 expressRouter.post('/', async (request, response) => {
   if((request.body.title === undefined) || (request.body.url === undefined)){
-    response.status(400).send({error: "Bad Request"})
+    return response.status(400).send({error: "Bad Request"})
   }
   if(request.body.likes === undefined){
     request.body.likes = 0
@@ -19,9 +19,9 @@ expressRouter.post('/', async (request, response) => {
 
   const blog = new mongoBlog(request.body);
 
-  const result = await blog.save();
+  const saved = await blog.save();
 
-  response.status(201).json(result)
+  response.json(saved.toJSON())
 });
 
 expressRouter.delete('/:id', async (request, response) => {

@@ -37,7 +37,7 @@ test('add blog', async () =>{
     likes: 1
   };
   const initialBlogs = await api.get('/api/blogs');
-  await api.post('/api/blogs').send(newblog).expect(201);
+  await api.post('/api/blogs').send(newblog).expect(200);
   const newBlogs = await api.get('/api/blogs');
 
   expect(newBlogs.body.length).toBe(initialBlogs.body.length + 1)
@@ -50,7 +50,7 @@ test('is likes property missing', async () =>{
     url: 'http://www.u.arizona.edu/~rubinson/copyright_violations/Go_To_Considered_Harmful.html',
   };
 
-  await api.post('/api/blogs').send(newblog).expect(201);
+  await api.post('/api/blogs').send(newblog).expect(200);
 
   const blogs = await api.get('/api/blogs');
   expect(blogs.body[6].likes).toBeDefined()
