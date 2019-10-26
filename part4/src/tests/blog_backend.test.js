@@ -77,6 +77,6 @@ test('update likes for blog', async () =>{
   await api.put('/api/blogs/'  + getBlog[0]._id).send(newLikes).expect(200);
 });
 
-afterAll(() => {
-  mongoose.connection.close()
+afterAll(async () => {
+  await mongoose.connection.close();
 });
