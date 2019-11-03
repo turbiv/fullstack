@@ -3,4 +3,13 @@ const errorHandler =  (error, request, response, next) =>{
   next(error)
 };
 
-module.exports = {errorHandler};
+const getToken = (request, response, next) =>{
+  const authorization = request.get('authorization');
+  if (authorization) {
+    request.token = authorization.substring(7)
+  }
+  next()
+};
+
+
+module.exports = {errorHandler, getToken};

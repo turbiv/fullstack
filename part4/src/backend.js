@@ -2,6 +2,8 @@ const http = require('http');
 const express = require('express');
 const app = express();
 const blogController = require("./controllers/blog");
+const userController = require("./controllers/users");
+const loginController = require("./controllers/login");
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const mongoose = require("mongoose");
@@ -13,7 +15,11 @@ mongoose.connect(mongoUrl, { useNewUrlParser: true});
 app.use(cors());
 app.use(bodyParser.json());
 
+app.use(middleware.getToken);
+
 app.use("/api/blogs", blogController);
+app.use("/api/users", userController);
+app.use("/api/login", loginController);
 
 app.use(middleware.errorHandler);
 
