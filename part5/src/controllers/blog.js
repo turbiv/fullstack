@@ -16,10 +16,9 @@ expressRouter.post('/', async (request, response) => {
   if((request.body.title === undefined) || (request.body.url === undefined)){
     return response.status(400).send({error: "Bad Request"})
   }
-
   const decodedtoken = jwt.decode(request.token, "test");
 
-  if(!(decodedtoken.username || token)){
+  if(!(decodedtoken.username || request.token)){
     return response.status(400).send({error: "missing or invalid token"})
   }
 

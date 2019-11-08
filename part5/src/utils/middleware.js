@@ -4,7 +4,7 @@ const errorHandler =  (error, request, response, next) =>{
 };
 
 const getToken = (request, response, next) =>{
-  const authorization = request.get('authorization');
+  const authorization = request.get('Authorization');
   if (authorization) {
     request.token = authorization.substring(7)
   }
