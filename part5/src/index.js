@@ -12,6 +12,7 @@ const App = () =>{
   const [url, setUrl] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
+  const [notification, setNotification] = useState(null);
 
   useEffect(() =>{
     const getBlogs = async () =>{
@@ -27,21 +28,31 @@ const App = () =>{
       const user = JSON.parse(browserStorage);
       setUser(user);
       console.log(user);
-      console.log(user.token)
+      console.log(user.token);
       blogApi.setToken(user.token)
     }
   },[]);
 
+  const displayNotification = notificationArg =>{
+    setNotification(<p>{notificationArg}</p>);
+    setTimeout(()=>{
+      setNotification(null)
+    }, 5000)
+  };
+
   const handleLogin = async (event) =>{
     event.preventDefault();
     console.log(password, username);
-    const user = await loginApi.login(username, password);
-    console.log(user);
+    const loginuser = await loginApi.login(username, password);
+    if(loginuser === null){
+      displayNotification("Failed to login");
+      return
+    }
     window.localStorage.setItem(
-      'loggedUser', JSON.stringify(user)
+      'loggedUser', JSON.stringify(loginuser)
     );
-    setUser(user);
-    blogApi.setToken(user.token)
+    setUser(loginuser);
+    blogApi.setToken(loginuser.token)
   };
 
   const handleLogout = () =>{
@@ -53,15 +64,19 @@ const App = () =>{
   const handleNewBlog = (event) =>{
     event.preventDefault();
     const postblog = blogApi.postBlog(url, author, title);
-
+    if(postblog === null){
+      return
+    }
+    displayNotification("A new blog " + title + " by " + author + " was added!");
     if(postblog){
-      setBlogs(blogs.concat(title + " by " + author))
+      setBlogs(blogs.concat({title, author}))
     }
   };
 
   if(user === null){
     return(
       <div>
+        {notification}
         Please login
         <form onSubmit={handleLogin}>
           <div>
@@ -78,8 +93,9 @@ const App = () =>{
     return(
       <div>
         <h2>Blogs</h2>
-        <button onClick={handleLogout}>Logout</button>
+        {user.name} logged in <button onClick={handleLogout}>Logout</button>
         <h3>Create</h3>
+        {notification}
         <form onSubmit={handleNewBlog}>
           <div>
             Title: <input value={title} type={"text"} onChange={({target}) => setTitle(target.value)}/>

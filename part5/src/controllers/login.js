@@ -12,7 +12,7 @@ expressRouter.post('/', async (request, response) =>{
   const passwordCorrect = user === null ? false : await bcrypt.compare(body.password, user.passwordHash);
 
   if(!(passwordCorrect || user)){
-    return response.status(400).send({error: "invalid username or password"})
+    return response.status(401).send({error: "invalid username or password"})
   }
 
   const userForToken = {

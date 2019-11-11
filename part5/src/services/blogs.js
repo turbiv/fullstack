@@ -19,7 +19,7 @@ const postBlog = (url, author, title) =>{
   };
 
   const request = axios.post(baseUrl, {url, author, title}, config);
-  return request.then(response => response.data)
+  return request.then(response => response.data).catch(() => null)
 };
 
 export default { getAll, setToken, postBlog }
