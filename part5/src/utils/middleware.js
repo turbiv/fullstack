@@ -1,5 +1,6 @@
 const errorHandler =  (error, request, response, next) =>{
   console.log(error);
+  response.status(400).send({error: "Error has occured, please check server console"});
   next(error)
 };
 

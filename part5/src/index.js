@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import ReactDOM from 'react-dom'
 import blogApi from "./services/blogs";
 import loginApi from "./services/login";
@@ -33,11 +32,16 @@ const App = () =>{
     }
   },[]);
 
-  const displayNotification = notificationArg =>{
-    setNotification(<p>{notificationArg}</p>);
+  const DisplayNotification = () =>{
     setTimeout(()=>{
       setNotification(null)
-    }, 5000)
+    }, 5000);
+
+    return(
+      <div>
+        <p>{notification}</p>
+      </div>
+    )
   };
 
   const handleLogin = async (event) =>{
@@ -45,14 +49,17 @@ const App = () =>{
     console.log(password, username);
     const loginuser = await loginApi.login(username, password);
     if(loginuser === null){
-      displayNotification("Failed to login");
+      setNotification("Failed to login");
       return
     }
     window.localStorage.setItem(
       'loggedUser', JSON.stringify(loginuser)
     );
     setUser(loginuser);
-    blogApi.setToken(loginuser.token)
+    blogApi.setToken(loginuser.token);
+
+    setPassword("");
+    setUsername("");
   };
 
   const handleLogout = () =>{
@@ -67,7 +74,7 @@ const App = () =>{
     if(postblog === null){
       return
     }
-    displayNotification("A new blog " + title + " by " + author + " was added!");
+    setNotification("A new blog " + title + " by " + author + " was added!");
     if(postblog){
       setBlogs(blogs.concat({title, author}))
     }
@@ -76,7 +83,7 @@ const App = () =>{
   if(user === null){
     return(
       <div>
-        {notification}
+        <DisplayNotification />
         Please login
         <form onSubmit={handleLogin}>
           <div>
@@ -95,7 +102,7 @@ const App = () =>{
         <h2>Blogs</h2>
         {user.name} logged in <button onClick={handleLogout}>Logout</button>
         <h3>Create</h3>
-        {notification}
+        <DisplayNotification />
         <form onSubmit={handleNewBlog}>
           <div>
             Title: <input value={title} type={"text"} onChange={({target}) => setTitle(target.value)}/>

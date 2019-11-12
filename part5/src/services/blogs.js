@@ -10,6 +10,7 @@ const setToken = newToken =>{
 const getAll = () => {
   const request = axios.get(baseUrl);
   return request.then(response => response.data)
+    .catch(() => [])
 };
 
 const postBlog = (url, author, title) =>{
@@ -19,7 +20,8 @@ const postBlog = (url, author, title) =>{
   };
 
   const request = axios.post(baseUrl, {url, author, title}, config);
-  return request.then(response => response.data).catch(() => null)
+  return request.then(response => response.data)
+    .catch(() => null)
 };
 
 export default { getAll, setToken, postBlog }
