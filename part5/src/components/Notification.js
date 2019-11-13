@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-const Notification = () =>{
+const Notification = (props) =>{
 
 
   setTimeout(()=>{

@@ -14,7 +14,6 @@ const getAll = () => {
 };
 
 const postBlog = (url, author, title) =>{
-  console.log({url, author, title, token});
   const config = {
     headers: { Authorization: token },
   };
@@ -24,4 +23,9 @@ const postBlog = (url, author, title) =>{
     .catch(() => null)
 };
 
-export default { getAll, setToken, postBlog }
+const putBlogLike = (likes, id) =>{
+  const request = axios.put(baseUrl + id, {likes});
+  return request.then(response => response.data).catch(() => null)
+};
+
+export default { getAll, setToken, postBlog, putBlogLike }

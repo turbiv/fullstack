@@ -1,7 +1,49 @@
 import React, {useState, useEffect} from 'react'
+
 import Togglable from "./Togglable";
 import BlogForm from "./Blogsform";
+
 import blogApi from "../services/blogs";
+
+const ExpandedBlogInfo = (props) =>{
+  const [visible, setVisible] = useState(false);
+
+  const basicInfoVisible = {display: visible ? 'none' : ''};
+  const extraInfoVisible = {display: visible ? '' : 'none'};
+
+  const blogStyle = {
+    paddingTop: 10,
+    paddingLeft: 2,
+    border: 'solid',
+    borderWidth: 1,
+    marginBottom: 5
+  };
+
+  const toggleVisible = () =>{
+    setVisible(!visible)
+  };
+
+  const handleLike = async (event) =>{
+    event.preventDefault();
+    const updatedjson = await blogApi.putBlogLike(props.blog.likes + 1,props.blog._id);
+
+  };
+
+  return(
+    <div style={blogStyle}>
+      <div style={basicInfoVisible}>
+        <p>{props.children}  <button onClick={toggleVisible}>Expand</button></p>
+      </div>
+      <div style={extraInfoVisible}>
+        <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
+        <p>{props.blog.url}</p>
+        <p>{props.blog.likes} likes <button onClick={handleLike}>Like</button></p>
+        <p>Added by {props.blog.user.name}</p>
+      </div>
+    </div>
+  )
+
+};
 
 const Blogs = () =>{
   const [url, setUrl] = useState("");
@@ -57,7 +99,7 @@ const Blogs = () =>{
           handleSubmit={handleNewBlog}
         />
       </Togglable>
-      {blogs.map(item => <p>{item.title + " by " + item.author}</p>)}
+      {blogs.map(item => <ExpandedBlogInfo blog={item}>{item.title + " by " + item.author}</ExpandedBlogInfo>)}
     </div>
   )
 };

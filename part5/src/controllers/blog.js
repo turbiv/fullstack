@@ -61,7 +61,6 @@ expressRouter.delete('/:id', async (request, response) => {
 expressRouter.put('/:id', async (request, response) => {
   const likes = {likes: request.body.likes};
 
-
   const updated = await mongoBlog.findByIdAndUpdate(request.params.id, likes, {
     new: true,
     runValidators: true,
