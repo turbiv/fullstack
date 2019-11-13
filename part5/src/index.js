@@ -5,26 +5,13 @@ import blogApi from "./services/blogs";
 import loginApi from "./services/login";
 
 import LoginForm from "./components/Loginform"
-import BlogForm from "./components/Blogsform"
-import Togglable from "./components/Togglable"
+import Blogs from "./components/Blogs"
 
 const App = () =>{
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [user, setUser] = useState(null);
-  const [blogs, setBlogs] = useState([]);
-  const [url, setUrl] = useState("");
-  const [title, setTitle] = useState("");
-  const [author, setAuthor] = useState("");
   const [notification, setNotification] = useState(null);
-
-  useEffect(() =>{
-    const getBlogs = async () =>{
-      const blogslist = await blogApi.getAll();
-      setBlogs(blogslist)
-    };
-    getBlogs();
-  },[]);
 
   useEffect(() => {
     const browserStorage = window.localStorage.getItem("loggedUser");
@@ -73,18 +60,6 @@ const App = () =>{
     blogApi.setToken("")
   };
 
-  const handleNewBlog = (event) =>{
-    event.preventDefault();
-    const postblog = blogApi.postBlog(url, author, title);
-    if(postblog === null){
-      return
-    }
-    setNotification("A new blog " + title + " by " + author + " was added!");
-    if(postblog){
-      setBlogs(blogs.concat({title, author}))
-    }
-  };
-
   if(user === null){
     return(
       <div>
@@ -103,20 +78,7 @@ const App = () =>{
       <div>
         <h2>Blogs</h2>
         {user.name} logged in <button onClick={handleLogout}>Logout</button>
-        <h3>Create</h3>
-        <DisplayNotification />
-        <Togglable label={"Create new blog"}>
-          <BlogForm
-            handleTitleChange={({target}) => setTitle(target.value)}
-            handleAuthorChange={({target}) => setAuthor(target.value)}
-            handleUrlChange={({target}) => setUrl(target.value)}
-            titleValue={title}
-            authorValue={author}
-            urlValue={url}
-            handleSubmit={handleNewBlog}
-          />
-        </Togglable>
-        {blogs.map(item => <p>{item.title + " by " + item.author}</p>)}
+        <Blogs/>
       </div>
     )
   }
