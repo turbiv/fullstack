@@ -23,12 +23,6 @@ const ExpandedBlogInfo = (props) =>{
     setVisible(!visible)
   };
 
-  const handleLike = async (event) =>{
-    event.preventDefault();
-    const updatedjson = await blogApi.putBlogLike(props.blog.likes + 1,props.blog._id);
-
-  };
-
   return(
     <div style={blogStyle}>
       <div style={basicInfoVisible}>
@@ -37,8 +31,9 @@ const ExpandedBlogInfo = (props) =>{
       <div style={extraInfoVisible}>
         <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
         <p>{props.blog.url}</p>
-        <p>{props.blog.likes} likes <button onClick={handleLike}>Like</button></p>
+        <p>{props.blog.likes} likes <button key={props.index} onClick={() =>props.handleLike(props.blog._id, props.blog.likes + 1, props.index)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
+        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.index)}>Delete</button>
       </div>
     </div>
   )
@@ -84,6 +79,20 @@ const Blogs = () =>{
     }
   };
 
+  const handleDeleteBlog = async (id, index) =>{
+    await blogApi.deleteBlog(id);
+    let newblogs = JSON.parse(JSON.stringify(blogs));
+    newblogs.splice(index, 1);
+    setBlogs(newblogs)
+  };
+
+  const handleLike = async (id, likes, index) =>{
+    await blogApi.putBlogLike(id, likes);
+    let newblogs = JSON.parse(JSON.stringify(blogs));
+    newblogs[index].likes = likes;
+    setBlogs(newblogs)
+  };
+
   return(
     <div>
       <h3>Create</h3>
@@ -99,7 +108,8 @@ const Blogs = () =>{
           handleSubmit={handleNewBlog}
         />
       </Togglable>
-      {blogs.map(item => <ExpandedBlogInfo blog={item}>{item.title + " by " + item.author}</ExpandedBlogInfo>)}
+      {blogs.map((item, index) => <ExpandedBlogInfo index={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>
+        {item.title + " by " + item.author}</ExpandedBlogInfo>)}
     </div>
   )
 };

@@ -23,9 +23,18 @@ const postBlog = (url, author, title) =>{
     .catch(() => null)
 };
 
-const putBlogLike = (likes, id) =>{
+const putBlogLike = (id, likes) =>{
   const request = axios.put(baseUrl + id, {likes});
   return request.then(response => response.data).catch(() => null)
 };
 
-export default { getAll, setToken, postBlog, putBlogLike }
+const deleteBlog = (id) =>{
+  const config = {
+    headers: { Authorization: token },
+  };
+
+  const request = axios.delete(baseUrl + id, config);
+  return request.then(response => response.data).catch(() => null)
+};
+
+export default { getAll, setToken, postBlog, putBlogLike, deleteBlog }
