@@ -18,8 +18,6 @@ const App = () =>{
     if(browserStorage){
       const user = JSON.parse(browserStorage);
       setUser(user);
-      console.log(user);
-      console.log(user.token);
       blogApi.setToken(user.token)
     }
   },[]);
@@ -38,7 +36,6 @@ const App = () =>{
 
   const handleLogin = async (event) =>{
     event.preventDefault();
-    console.log(password, username);
     const loginuser = await loginApi.login(username, password);
     if(loginuser === null){
       setNotification("Failed to login");
@@ -78,7 +75,7 @@ const App = () =>{
       <div>
         <h2>Blogs</h2>
         {user.name} logged in <button onClick={handleLogout}>Logout</button>
-        <Blogs/>
+        <Blogs user={user}/>
       </div>
     )
   }

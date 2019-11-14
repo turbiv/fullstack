@@ -31,16 +31,16 @@ const ExpandedBlogInfo = (props) =>{
       <div style={extraInfoVisible}>
         <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
         <p>{props.blog.url}</p>
-        <p>{props.blog.likes} likes <button key={props.index} onClick={() =>props.handleLike(props.blog._id, props.blog.likes + 1, props.index)}>Like</button></p>
+        <p>{props.blog.likes} likes <button key={props.index} onClick={() =>props.handleLike(props.blog._id, props.blog.likes + 1, props.key)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
-        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.index)}>Delete</button>
+        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.key, props.blog.user.username)}>Delete</button>
       </div>
     </div>
   )
 
 };
 
-const Blogs = () =>{
+const Blogs = (props) =>{
   const [url, setUrl] = useState("");
   const [title, setTitle] = useState("");
   const [author, setAuthor] = useState("");
@@ -49,7 +49,8 @@ const Blogs = () =>{
 
   useEffect(() =>{
     const getBlogs = async () =>{
-      const blogslist = await blogApi.getAll();
+      let blogslist = await blogApi.getAll();
+      blogslist = blogslist.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
       setBlogs(blogslist)
     };
     getBlogs();
@@ -75,15 +76,19 @@ const Blogs = () =>{
     }
     setNotification("A new blog " + title + " by " + author + " was added!");
     if(postblog){
-      setBlogs(blogs.concat({title, author}))
+      setBlogs(blogs.concat({title, author, user: props.user.name}))
     }
   };
 
-  const handleDeleteBlog = async (id, index) =>{
-    await blogApi.deleteBlog(id);
-    let newblogs = JSON.parse(JSON.stringify(blogs));
-    newblogs.splice(index, 1);
-    setBlogs(newblogs)
+  const handleDeleteBlog = async (id, index, username) =>{
+    const result = window.confirm("Are you sure you want to delete a blog?");
+    const blogbyuser = (username === props.user.username);
+    if(result && blogbyuser) {
+      await blogApi.deleteBlog(id);
+      let newblogs = JSON.parse(JSON.stringify(blogs));
+      newblogs.splice(index, 1);
+      setBlogs(newblogs)
+    }
   };
 
   const handleLike = async (id, likes, index) =>{
@@ -108,7 +113,7 @@ const Blogs = () =>{
           handleSubmit={handleNewBlog}
         />
       </Togglable>
-      {blogs.map((item, index) => <ExpandedBlogInfo index={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>
+      {blogs.map((item, index) => <ExpandedBlogInfo key={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>
         {item.title + " by " + item.author}</ExpandedBlogInfo>)}
     </div>
   )
