@@ -2,9 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6770ccd-1cac-4961-953a-a165080fc7d4" name="Default Changelist" comment="squash! Part 2b">
+      <change afterPath="$PROJECT_DIR$/src/components/ExpandedBlogInfo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/SimpleBlog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/bloglist_frontend.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/tests/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Blogsform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Blogsform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Loginform.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Loginform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Togglable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Togglable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/blog.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/services/blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/blogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/middleware.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,8 +33,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/Blogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <state relative-caret-position="295">
+              <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -29,32 +42,46 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/ExpandedBlogInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+            <state relative-caret-position="34">
+              <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/tests/bloglist_frontend.test.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="156">
+              <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="e#0#47#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/controllers/blog.js">
+        <entry file="file://$PROJECT_DIR$/src/tests/setupTests.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jest.config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="61" column="44" selection-start-line="61" selection-start-column="44" selection-end-line="61" selection-end-column="44" />
+            <state relative-caret-position="85">
+              <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/services/blogs.js">
+        <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="28" column="2" lean-forward="true" selection-start-line="28" selection-start-column="2" selection-end-line="28" selection-end-column="2" />
+            <state relative-caret-position="404">
+              <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -79,12 +106,14 @@
       <find>api.post</find>
       <find>handleLogin</find>
       <find>displaynoti</find>
-      <find>BlogForm</find>
       <find>title</find>
       <find>blogs</find>
       <find>DisplayNotification</find>
-      <find>blogApi</find>
       <find>console.log</find>
+      <find>jest</find>
+      <find>BlogForm</find>
+      <find>Togglable</find>
+      <find>blogApi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -106,7 +135,6 @@
         <option value="$PROJECT_DIR$/.eslintrc.js" />
         <option value="$PROJECT_DIR$/src/services/Persons.js" />
         <option value="$PROJECT_DIR$/src/utils/for_testing.js" />
-        <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/jest.coinfig.js" />
         <option value="$PROJECT_DIR$/src/tests/exampleBlogs.js" />
         <option value="$PROJECT_DIR$/src/tests/blog.test.js" />
@@ -127,8 +155,14 @@
         <option value="$PROJECT_DIR$/src/components/Notification.js" />
         <option value="$PROJECT_DIR$/src/controllers/blog.js" />
         <option value="$PROJECT_DIR$/src/services/blogs.js" />
-        <option value="$PROJECT_DIR$/src/components/Blogs.js" />
         <option value="$PROJECT_DIR$/src/index.js" />
+        <option value="$PROJECT_DIR$/src/components/SimpleBlog.js" />
+        <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/jest.config.js" />
+        <option value="$PROJECT_DIR$/src/tests/setupTests.js" />
+        <option value="$PROJECT_DIR$/src/components/Blogs.js" />
+        <option value="$PROJECT_DIR$/src/components/ExpandedBlogInfo.js" />
+        <option value="$PROJECT_DIR$/src/tests/bloglist_frontend.test.js" />
       </list>
     </option>
   </component>
@@ -138,11 +172,11 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="2023" />
-    <option name="y" value="379" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="90" />
+    <option name="y" value="-16" />
+    <option name="width" value="1932" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -181,30 +215,30 @@
           <expand>
             <path>
               <item name="part5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\__GIT\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\dev\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
             </path>
             <path>
               <item name="part5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\__GIT\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\dev\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="part5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\__GIT\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\dev\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="components" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="part5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\__GIT\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\dev\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="controllers" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="tests" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="part5" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="D:\__GIT\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="C:\dev\fullstack\part5" type="442cc68d:ScopeViewTreeModel$RootNode" />
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="services" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="utils" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
           </expand>
           <select />
@@ -225,13 +259,13 @@
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
-    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/jest" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="D:\__GIT\fullstack\part3\node_modules\prettier" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
@@ -252,7 +286,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Jest.blog_backend.test.js">
+  <component name="RunManager" selected="Jest.bloglist_frontend.test.js">
     <configuration name="All Tests" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
       <node-interpreter value="project" />
       <node-options value="" />
@@ -282,6 +316,16 @@
       <envs />
       <scope-kind value="TEST_FILE" />
       <test-file value="$PROJECT_DIR$/src/tests/blog_backend.test.js" />
+      <method v="2" />
+    </configuration>
+    <configuration name="bloglist_frontend.test.js" type="JavaScriptTestRunnerJest" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST_FILE" />
+      <test-file value="$PROJECT_DIR$/src/tests/bloglist_frontend.test.js" />
       <method v="2" />
     </configuration>
     <configuration name="delete blog" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
@@ -317,6 +361,7 @@
     <list>
       <item itemvalue="Jest.All Tests" />
       <item itemvalue="Jest.blog_backend.test.js" />
+      <item itemvalue="Jest.bloglist_frontend.test.js" />
       <item itemvalue="Jest.delete blog" />
       <item itemvalue="Jest.update likes for blog" />
     </list>
@@ -363,39 +408,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 33m 50s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 53m 17s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 38m 38s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 55m 08s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 40m 05s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 55m 16s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 41m 10s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 55m 42s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 41m 30s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 56m 47s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 43m 34s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 57m 00s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 44m 08s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 58m 30s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.10.26 at 22h 44m 56s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 17h 58m 38s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.11.06 at 21h 38m 17s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 18h 00m 36s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
-    <history-entry file="blog_backend_test_js - 2019.11.11 at 16h 48m 18s.xml">
-      <configuration name="blog_backend.test.js" configurationId="JavaScriptTestRunnerJest" />
+    <history-entry file="bloglist_frontend_test_js - 2019.11.19 at 18h 09m 04s.xml">
+      <configuration name="bloglist_frontend.test.js" configurationId="JavaScriptTestRunnerJest" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247457000" />
+    <option name="totallyTimeSpent" value="257330000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -407,11 +452,11 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="2023" y="379" width="1936" height="1056" extended-state="0" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.48292682" visible="true" weight="0.20126449" />
-      <window_info id="Structure" order="1" sideWeight="0.51707315" side_tool="true" weight="0.24973656" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.48171702" visible="true" weight="0.24920969" />
+      <window_info id="Structure" order="1" sideWeight="0.518283" side_tool="true" weight="0.24920969" />
       <window_info id="npm" order="2" sideWeight="0.5014663" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -423,8 +468,8 @@
       <window_info anchor="bottom" id="Docker" order="6" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.2611051" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.5015806" side_tool="true" weight="0.33694476" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49841937" visible="true" weight="0.33694476" />
-      <window_info anchor="bottom" x="1897" y="566" width="1898" height="523" id="Run" maximized="true" order="10" sideWeight="0.51869917" weight="0.31852654" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49841937" weight="0.32936078" />
+      <window_info active="true" anchor="bottom" x="1897" y="566" width="1898" height="523" id="Run" maximized="true" order="10" sideWeight="0.51869917" visible="true" weight="0.31852654" />
       <window_info anchor="bottom" id="TypeScript" order="11" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -500,8 +545,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="Part 2b" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/index_part2b.js" />
-    <entry file="file://$PROJECT_DIR$/src/components/Course.js" />
     <entry file="file://$PROJECT_DIR$/src/index_part2a.js" />
     <entry file="file://$PROJECT_DIR$/src/index_part2countries.js" />
     <entry file="file://$PROJECT_DIR$/package-lock.json">
@@ -540,13 +583,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/express/lib/express.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.12.0/core-modules/_http_server.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.12.0/core-modules/_http_common.js" />
-    <entry file="file://$PROJECT_DIR$/jest.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="1" lean-forward="true" selection-start-line="2" selection-start-column="1" selection-end-line="2" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/nodejs/8.12.0/core-modules/net.js" />
     <entry file="file://$APPLICATION_CONFIG_DIR$/javascript/extLibs/global-types/node_modules/@types/superagent/index.d.ts" />
     <entry file="file://$PROJECT_DIR$/src/tests/exampleBlogs.js">
@@ -592,13 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
           <caret line="32" column="27" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="533">
-          <caret line="35" column="31" selection-start-line="35" selection-start-column="31" selection-end-line="35" selection-end-column="31" />
         </state>
       </provider>
     </entry>
@@ -686,16 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Blogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/Loginform.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -703,12 +722,70 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="45" column="3" lean-forward="true" selection-start-line="45" selection-start-column="3" selection-end-line="45" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="34" />
+        <state relative-caret-position="139">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
           <folding>
             <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jest.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="2" lean-forward="true" selection-start-line="5" selection-start-column="2" selection-end-line="5" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/@types/testing-library__dom/queries.d.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="90" column="13" selection-start-line="90" selection-start-column="13" selection-end-line="90" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/SimpleBlog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" lean-forward="true" selection-start-column="25" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/setupTests.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Blogs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="295">
+          <caret line="78" column="38" lean-forward="true" selection-start-line="78" selection-start-column="38" selection-end-line="78" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ExpandedBlogInfo.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="5" column="57" selection-start-line="5" selection-start-column="57" selection-end-line="5" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/tests/bloglist_frontend.test.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="47" column="28" lean-forward="true" selection-start-line="47" selection-start-column="28" selection-end-line="47" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#47#0" expanded="true" />
           </folding>
         </state>
       </provider>
