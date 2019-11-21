@@ -4,6 +4,18 @@ import SimpleBlog from '../components/SimpleBlog'
 import ExpandedBlogInfo from '../components/ExpandedBlogInfo'
 import '@testing-library/jest-dom/extend-expect'
 
+const blogData = {
+  title: "TestingTitle",
+  author: "TestingAuthor",
+  url: "TestingUrl",
+  likes: "TestingLikes",
+  user:{
+    username: "TestingUsername",
+    name: "TestingName"
+  },
+};
+
+
 test("render SimpleBlog component", () => {
   const blogData = {
     title: "TestTitle",
@@ -43,17 +55,6 @@ test("check like button", () => {
 
 test("Verify name and author shown by default", () => {
 
-  const blogData = {
-    title: "TestingTitle",
-    author: "TestingAuthor",
-    url: "TestingUrl",
-    likes: "TestingLikes",
-    user:{
-      username: "TestingUsername",
-      name: "TestingName"
-    },
-  };
-
   const component = render(
     <ExpandedBlogInfo blog={blogData}>
       {blogData.title + " " + blogData.author}
@@ -63,5 +64,26 @@ test("Verify name and author shown by default", () => {
   const div = component.container.querySelector(".DefaultBlogInfo");
 
   expect(div).not.toHaveStyle("display: none")
+
+});
+
+
+test("Verify extended blog info is visible", () =>{
+
+  const component = render(
+    <ExpandedBlogInfo blog={blogData}>
+      {blogData.title + " " + blogData.author}
+    </ExpandedBlogInfo>
+  );
+
+  const selectButton = component.getByText("Expand");
+
+  fireEvent.click(selectButton);
+
+  const div = component.container.querySelector(".DefaultBlogInfo");
+
+  expect(div).toHaveStyle("display: none")
+
+
 
 });

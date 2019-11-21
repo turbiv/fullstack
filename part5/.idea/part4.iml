@@ -12,5 +12,6 @@
     <orderEntry type="library" name="@types/jest" level="application" />
     <orderEntry type="library" name="@types/express" level="application" />
     <orderEntry type="library" name="@types/supertest" level="application" />
+    <orderEntry type="library" name="@types/testing-library__react" level="application" />
   </component>
 </module>
