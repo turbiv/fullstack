@@ -3,8 +3,7 @@ import React, {useState, useEffect} from 'react'
 import Togglable from "./Togglable";
 import BlogForm from "./Blogsform";
 import ExpandedBlogInfo from "./ExpandedBlogInfo"
-
-import blogApi from "../services/blogs";
+import {useResource} from "../hooks/hooksjs";
 
 const Blogs = (props) =>{
   const [url, setUrl] = useState("");
@@ -12,14 +11,21 @@ const Blogs = (props) =>{
   const [author, setAuthor] = useState("");
   const [blogs, setBlogs] = useState([]);
   const [notification, setNotification] = useState(null);
+  const [user, blogService] = useResource("http://localhost:3003/api/blogs/");
 
   useEffect(() =>{
     const getBlogs = async () =>{
-      let blogslist = await blogApi.getAll();
+      let blogslist = await blogService.getAll();
       blogslist = blogslist.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
       setBlogs(blogslist)
     };
     getBlogs();
+  },[]);
+
+  useEffect(() => {
+    const browserStorage = window.localStorage.getItem("loggedUser");
+    const userData = JSON.parse(browserStorage);
+    blogService.setUser(userData)
   },[]);
 
   const DisplayNotification = () =>{
@@ -36,7 +42,7 @@ const Blogs = (props) =>{
 
   const handleNewBlog = (event) =>{
     event.preventDefault();
-    const postblog = blogApi.postBlog(url, author, title);
+    const postblog = blogService.createAuth({url, author, title});
     if(postblog === null){
       return
     }
@@ -50,7 +56,7 @@ const Blogs = (props) =>{
     const result = window.confirm("Are you sure you want to delete a blog?");
     const blogbyuser = (username === props.user.username);
     if(result && blogbyuser) {
-      await blogApi.deleteBlog(id);
+      await blogService.deleteDataAuth(id);
       let newblogs = JSON.parse(JSON.stringify(blogs));
       newblogs.splice(index, 1);
       setBlogs(newblogs)
@@ -58,9 +64,9 @@ const Blogs = (props) =>{
   };
 
   const handleLike = async (id, likes, index) =>{
-    await blogApi.putBlogLike(id, likes);
+    await blogService.update(id, {likes});
     let newblogs = JSON.parse(JSON.stringify(blogs));
-    newblogs[index].likes = likes;
+    newblogs[index].likes = likes + 1;
     setBlogs(newblogs)
   };
 

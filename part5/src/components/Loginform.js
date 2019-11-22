@@ -1,15 +1,49 @@
-import React from 'react'
+import React, {useState} from 'react'
+import  { useField } from '../hooks/hooksjs'
+import loginApi from "../services/login";
+import blogApi from "../services/blogs";
 
-const LoginForm = (props) =>{
+const LoginForm = ({setNewUser}) =>{
+  const [notification, setNotification] = useState(null);
+  const password = useField("password");
+  const username = useField("text");
+
+  const handleLogin = async (event) =>{
+    event.preventDefault();
+    const loginuser = await loginApi.login(username.value, password.value);
+    if(loginuser === null){
+      setNotification("Failed to login");
+      return
+    }
+    window.localStorage.setItem(
+      'loggedUser', JSON.stringify(loginuser)
+    );
+    setNewUser(loginuser);
+    blogApi.setToken(loginuser.token);
+  };
+
+  const DisplayNotification = () =>{
+    setTimeout(()=>{
+      setNotification(null)
+    }, 5000);
+
+    return(
+      <div>
+        <p>{notification}</p>
+      </div>
+    )
+  };
+
   return(
     <div>
+      <DisplayNotification />
       Please login
-      <form onSubmit={props.handleLogin}>
+      <form onSubmit={handleLogin}>
         <div>
-          Username: <input value={props.usernameValue} type={"text"} onChange={props.handleUsernameChange}/>
+          Username: <input {...username}/>
         </div>
         <div>
-          Password: <input value={props.passwordValue} type={"password"} onChange={props.handlePasswordChange}/>
+          Password: <input {...password}/>
         </div>
         <button type="submit">Login</button>
       </form>
