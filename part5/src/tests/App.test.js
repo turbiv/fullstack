@@ -40,5 +40,7 @@ describe("Index test", () =>{
 
     component.debug()
 
+    //Was not able to run on jest
+
   })
 });
