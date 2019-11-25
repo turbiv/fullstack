@@ -20,13 +20,14 @@ const Blogs = (props) =>{
       setBlogs(blogslist)
     };
     getBlogs();
-  },[]);
+  },[blogService]);
 
   useEffect(() => {
     const browserStorage = window.localStorage.getItem("loggedUser");
     const userData = JSON.parse(browserStorage);
-    blogService.setUser(userData)
-  },[]);
+    blogService.setUser(userData);
+    console.log(user)
+  },[blogService, user]);
 
   const DisplayNotification = () =>{
     setTimeout(()=>{
@@ -85,8 +86,7 @@ const Blogs = (props) =>{
           handleSubmit={handleNewBlog}
         />
       </Togglable>
-      {blogs.map((item, index) => <ExpandedBlogInfo key={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>
-        {item.title + " by " + item.author}</ExpandedBlogInfo>)}
+      {blogs.map((item, index) => <ExpandedBlogInfo id={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>{item.title + " by " + item.author}</ExpandedBlogInfo>)}
     </div>
   )
 };

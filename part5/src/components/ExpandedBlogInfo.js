@@ -17,7 +17,6 @@ const ExpandedBlogInfo = (props) =>{
   const toggleVisible = () =>{
     setVisible(!visible)
   };
-  console.log(props.key)
   return(
     <div style={blogStyle}>
       <div style={basicInfoVisible} className={"DefaultBlogInfo"}>
@@ -26,9 +25,9 @@ const ExpandedBlogInfo = (props) =>{
       <div style={extraInfoVisible} className={"ExtraBlogInfo"}>
         <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
         <p>{props.blog.url}</p>
-        <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>props.handleLike(props.blog._id, props.blog.likes, props.key)}>Like</button></p>
+        <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>props.handleLike(props.blog._id, props.blog.likes, props.id)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
-        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.key, props.blog.user.username)}>Delete</button>
+        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.id, props.blog.user.username)}>Delete</button>
       </div>
     </div>
   )
