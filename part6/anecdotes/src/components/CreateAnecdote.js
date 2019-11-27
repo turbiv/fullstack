@@ -1,10 +1,12 @@
 import React from "react"
 import {create} from "../reducers/anecdoteReducer";
+import {createNotification} from "../reducers/notificationReducer";
 
 const CreateAnecdote = (props) =>{
   const handleCreateAnecdote = (event) =>{
     event.preventDefault();
-    props.store.dispatch(create(event.target.anecdote.value))
+    props.store.dispatch(create(event.target.anecdote.value));
+    props.store.dispatch(createNotification(event.target.anecdote.value))
   };
 
   return(
