@@ -1,12 +1,13 @@
 import React from "react"
+import { connect } from 'react-redux'
 import {create} from "../reducers/anecdoteReducer";
 import {createNotification} from "../reducers/notificationReducer";
 
 const CreateAnecdote = (props) =>{
   const handleCreateAnecdote = (event) =>{
     event.preventDefault();
-    props.store.dispatch(create(event.target.anecdote.value));
-    props.store.dispatch(createNotification(event.target.anecdote.value))
+    props.create(event.target.anecdote.value);
+    props.createNotification(event.target.anecdote.value)
   };
 
   return(
@@ -20,4 +21,10 @@ const CreateAnecdote = (props) =>{
   )
 };
 
-export default CreateAnecdote
+const mapDispatchToProps = {
+  create,
+  createNotification
+};
+
+const connectedCreateAnecdote = connect(null, mapDispatchToProps)(CreateAnecdote);
+export default connectedCreateAnecdote
