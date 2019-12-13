@@ -5,7 +5,6 @@ import {createNotification} from "../reducers/notificationReducer";
 import AnecdoteFilter from "./AnecdoteFilter"
 
 const AnecdoteList = (props) =>{
-  const anecdotes = props.anecdotes;
 
   const handleVote = (anecdote) =>{
     props.vote(anecdote.id);

@@ -1,3 +1,5 @@
+import anecdotesService from "../services/anecdotes";
+
 const anecdotesAtStart = [
   'If it hurts, do it more often',
   'Adding manpower to a late software project makes it later!',
@@ -35,10 +37,14 @@ export const create = (content) =>{
   }
 };
 
+export const initialize = (data) =>{
+  return{
+    type: "INIT",
+    data
+  }
+};
 
-const initialState = anecdotesAtStart.map(asObject);
-
-const reducer = (state = initialState, action) => {
+const reducer = (state = [], action) => {
   console.log('state now: ', state);
   console.log('action', action);
 
@@ -56,7 +62,12 @@ const reducer = (state = initialState, action) => {
         id: getId(),
         votes: 0
       };
+
+      anecdotesService.createAnecdote(newAnecdote);
+
       return [...state, newAnecdote];
+    case "INIT":
+      return action.data;
     default:
   }
 
