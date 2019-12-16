@@ -1,21 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8cc21da4-4a94-4e4a-8764-2ae92e83a77d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/anecdotes/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/db.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/db.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/AnecdoteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/AnecdoteList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/CreateAnecdote.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/CreateAnecdote.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/Notification.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/reducers/anecdoteReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/reducers/anecdoteReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/anecdotes/src/services/anecdotes.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/services/anecdotes.js" afterDir="false" />
-    </list>
+    <list default="true" id="8cc21da4-4a94-4e4a-8764-2ae92e83a77d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -60,8 +46,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="31" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="153">
+              <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -247,7 +233,7 @@
       <updated>1574671137508</updated>
       <workItem from="1574671138717" duration="1213000" />
       <workItem from="1574677325993" duration="10739000" />
-      <workItem from="1576076919112" duration="22778000" />
+      <workItem from="1576076919112" duration="23075000" />
     </task>
     <servers />
   </component>
@@ -269,11 +255,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="45365000" />
+    <option name="totallyTimeSpent" value="45662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24920969" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -474,8 +459,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" lean-forward="true" selection-start-line="4" selection-start-column="14" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="true" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
         </state>
       </provider>
     </entry>
