@@ -1,5 +1,4 @@
 import React from 'react'
-import {removeNotification} from "../reducers/notificationReducer";
 import { connect } from 'react-redux'
 
 const Notification = (props) => {
@@ -10,10 +9,6 @@ const Notification = (props) => {
     padding: 10,
     borderWidth: 1
   };
-
-  setTimeout(()=>{
-    props.removeNotification()
-  },5000);
 
   return (
     <div style={style}>
@@ -28,9 +23,6 @@ const mapStateToProps = state =>{
   }
 };
 
-const mapDispatchToProps = {
-  removeNotification
-};
 
-const ConntectedNotfication = connect(mapStateToProps, mapDispatchToProps)(Notification);
+const ConntectedNotfication = connect(mapStateToProps)(Notification);
 export default ConntectedNotfication

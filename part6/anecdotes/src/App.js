@@ -4,15 +4,11 @@ import { connect } from 'react-redux'
 import CreateAnecdote from "./components/CreateAnecdote"
 import AnecdoteList from "./components/AnecdoteList"
 import Notification from "./components/Notification"
-import anecdotesService from "./services/anecdotes";
 import {initialize} from "./reducers/anecdoteReducer";
 
 const App = (props) => {
   useEffect(() =>{
-    anecdotesService.getAll().then(anecdotes =>{
-      props.initialize(anecdotes);
-      console.log("asd")
-    });
+      props.initialize();
   },[props]);
 
   return (

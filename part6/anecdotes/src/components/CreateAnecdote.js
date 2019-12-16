@@ -7,7 +7,7 @@ const CreateAnecdote = (props) =>{
   const handleCreateAnecdote = (event) =>{
     event.preventDefault();
     props.create(event.target.anecdote.value);
-    props.createNotification(event.target.anecdote.value);
+    props.createNotification(event.target.anecdote.value, 5);
   };
 
   return(

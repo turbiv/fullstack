@@ -7,8 +7,8 @@ import AnecdoteFilter from "./AnecdoteFilter"
 const AnecdoteList = (props) =>{
 
   const handleVote = (anecdote) =>{
-    props.vote(anecdote.id);
-    props.createNotification("You voted for anecdote named: " + anecdote.content)
+    props.vote(anecdote);
+    props.createNotification("You voted for anecdote named: " + anecdote.content, 5)
   };
 
   return(
