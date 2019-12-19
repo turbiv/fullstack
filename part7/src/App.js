@@ -9,48 +9,27 @@ import AnecdoteList from "./components/AnecdoteList"
 import Menu from "./components/Menu"
 import Footer from "./components/Footer"
 import About from "./components/About"
-import {createAnecdote} from "./reducers/anecdoteReducer";
+import {voteAnecdote} from "./reducers/anecdoteReducer";
 
 const NewAnecdote = withRouter(CreateNew);
 
 const App = (props) => {
 
-  const [notification, setNotification] = useState('');
-
-  const addNew = (anecdote) => {
-    anecdote.id = (Math.random() * 10000).toFixed(0);
-    props.store.dispatch(createAnecdote(anecdote));
-    setNotification("Created new anecdote: " + anecdote.content);
-    setTimeout(() =>{
-      setNotification("")
-    }, 10000)
-  };
-
   const anecdoteById = (id) =>
     props.store.getState().anecdote.find(a => a.id === id);
 
-  const vote = (id) => {
-    const anecdote = anecdoteById(id);
-
-    const voted = {
-      ...anecdote,
-      votes: anecdote.votes + 1
-    };
-
-    //setAnecdotes(anecdotes.map(a => a.id === id ? voted : a))
-  };
-
+  const vote = (id) => props.store.dispatch(voteAnecdote(id));
 
   return (
     <div>
       <Router>
         <h1>Software anecdotes</h1>
         <Menu />
-        <p>{notification}</p>
+        <p>{props.store.getState().notification}</p>
         <Route exact path="/" render={() => <AnecdoteList anecdotes={props.store.getState().anecdote} />}/>
         <Route exact path={"/anecdotes/:id"} render={({match}) => <Anecdote anecdote={anecdoteById(match.params.id)}/>}/>
         <Route path="/about" render={() => <About />}/>
-        <Route path="/newanecdote" render={() => <NewAnecdote store={props.store} addNew={addNew} />}/>
+        <Route path="/newanecdote" render={() => <NewAnecdote store={props.store}/>}/>
         <Footer />
       </Router>
     </div>

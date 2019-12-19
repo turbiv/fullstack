@@ -1,19 +1,24 @@
 import React, { useState } from 'react'
+import {createAnecdote} from "../reducers/anecdoteReducer";
+import {createNotification} from "../reducers/notificationReducer";
 
 const CreateNew = (props) => {
   const [content, setContent] = useState('');
   const [author, setAuthor] = useState('');
   const [info, setInfo] = useState('');
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.addNew({
+    const anecdote = {
       content,
       author,
       info,
       votes: 0
-    });
+    };
+    anecdote.id = (Math.random() * 10000).toFixed(0);
+    props.store.dispatch(createAnecdote(anecdote));
+    props.store.dispatch(createNotification("Created new anecdote: " + anecdote.content, 5));
+
     props.history.push("/")
   };
 
