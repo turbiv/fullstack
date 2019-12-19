@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import {connect} from "react-redux"
 import {createAnecdote} from "../reducers/anecdoteReducer";
 import {createNotification} from "../reducers/notificationReducer";
 
@@ -16,8 +17,8 @@ const CreateNew = (props) => {
       votes: 0
     };
     anecdote.id = (Math.random() * 10000).toFixed(0);
-    props.store.dispatch(createAnecdote(anecdote));
-    props.store.dispatch(createNotification("Created new anecdote: " + anecdote.content, 5));
+    props.createAnecdote(anecdote);
+    props.createNotification("Created new anecdote: " + anecdote.content, 5)
 
     props.history.push("/")
   };
@@ -45,4 +46,10 @@ const CreateNew = (props) => {
 
 };
 
-export default CreateNew
+const mapDispatchToProps = {
+  createNotification,
+  createAnecdote
+};
+
+const connectedCreateNew = connect(null, mapDispatchToProps)(CreateNew);
+export default connectedCreateNew
