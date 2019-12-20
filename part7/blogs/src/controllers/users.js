@@ -1,7 +1,7 @@
 const express = require("express");
 const expressRouter = express.Router();
 const mongoUsers = require("../models/mongousers");
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 expressRouter.post('/', async (request, response) =>{
   const body = request.body;

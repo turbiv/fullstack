@@ -1,14 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="64e9e1ac-898e-4c4f-98bd-a20f86fafee8" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../part6/anecdotes/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/notificationReducer.js" afterDir="false" />
+    <list default="true" id="ae2f329b-8fb2-4772-bf2e-ce2eeb7b5ae7" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../part6/anecdotes/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CreateNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CreateNew.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reducers/anecdoteReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/anecdoteReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/About.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/Anecdote.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/Anecdote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/AnecdoteList.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/AnecdoteList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/CreateNew.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/CreateNew.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/components/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/components/Menu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/reducers/anecdoteReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/reducers/anecdoteReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/anecdotes/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/anecdotes/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/.babelrc" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/.babelrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/jest.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/jest.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/backend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/Blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/Blogsform.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Blogsform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/Loginform.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Loginform.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/SimpleBlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/SimpleBlog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/components/Togglable.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Togglable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/controllers/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/controllers/blog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/controllers/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/controllers/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/controllers/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/controllers/users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/hooks/hooksjs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/hooks/hooksjs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/models/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/models/mongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/models/mongousers.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/models/mongousers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/serviceWorker.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/serviceWorker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/services/__mocks__/blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/services/__mocks__/blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/services/blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/services/blogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/services/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/services/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/blog.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/blog.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/blog_backend.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/blog_backend.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/bloglist_frontend.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/bloglist_frontend.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/exampleBlogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/exampleBlogs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/tests/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/tests/setupTests.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/utils/list_helper.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/utils/list_helper.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/src/utils/middleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/utils/middleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/blogs/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,33 +71,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blogs/src/index.js">
+        <entry file="file://$PROJECT_DIR$/blogs/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blogs/src/App.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" selection-start-line="4" selection-end-line="4" />
-              <folding>
-                <element signature="e#0#50#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogs.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="179">
-              <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
+            <state relative-caret-position="369">
+              <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
               <folding>
                 <element signature="e#0#48#0" expanded="true" />
               </folding>
@@ -57,26 +96,26 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+            <state relative-caret-position="204">
+              <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blogs/src/reducers/blogReducer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="38" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="38" />
+            <state relative-caret-position="170">
+              <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/blogs/src/components/Loginform.js">
+        <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogsform.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+            <state relative-caret-position="187">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -86,17 +125,10 @@
       </file>
     </leaf>
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>NewAnecdote</find>
-      <find>setNotification</find>
+      <find>setBlogs</find>
+      <find>blogs</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -105,31 +137,21 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/Footer.js" />
-        <option value="$PROJECT_DIR$/src/components/AnecdoteList.js" />
-        <option value="$PROJECT_DIR$/src/components/Menu.js" />
-        <option value="$PROJECT_DIR$/src/components/About.js" />
-        <option value="$PROJECT_DIR$/src/components/Anecdote.js" />
-        <option value="$PROJECT_DIR$/src/reducers/anecdoteReducer.js" />
-        <option value="$PROJECT_DIR$/src/reducers/notificationReducer.js" />
-        <option value="$PROJECT_DIR$/src/components/CreateNew.js" />
-        <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js" />
-        <option value="$PROJECT_DIR$/blogs/src/reducers/usersReducer.js" />
-        <option value="$PROJECT_DIR$/blogs/src/index.js" />
-        <option value="$PROJECT_DIR$/blogs/src/components/Loginform.js" />
-        <option value="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" />
+        <option value="$PROJECT_DIR$/blogs/package.json" />
+        <option value="$PROJECT_DIR$/blogs/src/controllers/users.js" />
+        <option value="$PROJECT_DIR$/blogs/src/controllers/login.js" />
+        <option value="$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js" />
+        <option value="$PROJECT_DIR$/blogs/src/components/Blogsform.js" />
         <option value="$PROJECT_DIR$/blogs/src/components/Blogs.js" />
+        <option value="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="150" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1096" />
+    <option name="x" value="38" />
+    <option name="y" value="-16" />
+    <option name="width" value="1932" />
+    <option name="height" value="1047" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -137,6 +159,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -167,39 +190,32 @@
               <item name="part7" type="462c0819:PsiDirectoryNode" />
               <item name="blogs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="reducers" type="462c0819:PsiDirectoryNode" />
+              <item name="controllers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="part7" type="b2602c69:ProjectViewProjectNode" />
               <item name="part7" type="462c0819:PsiDirectoryNode" />
               <item name="blogs" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="hooks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="part7" type="b2602c69:ProjectViewProjectNode" />
+              <item name="part7" type="462c0819:PsiDirectoryNode" />
+              <item name="blogs" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="editor.config.ad.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/blogs" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2019.1.3\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\__GIT\fullstack\part7\blogs" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\__GIT\fullstack\part7\anecdotes" />
-    </key>
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -218,28 +234,26 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="64e9e1ac-898e-4c4f-98bd-a20f86fafee8" name="Default Changelist" comment="" />
-      <created>1576491499426</created>
+      <changelist id="ae2f329b-8fb2-4772-bf2e-ce2eeb7b5ae7" name="Default Changelist" comment="" />
+      <created>1576847370337</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1576491499426</updated>
-      <workItem from="1576491503971" duration="5535000" />
-      <workItem from="1576763572781" duration="6252000" />
-      <workItem from="1576785473952" duration="5230000" />
+      <updated>1576847370337</updated>
+      <workItem from="1576847374652" duration="7768000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17017000" />
+    <option name="totallyTimeSpent" value="8002000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="npm" side_tool="true" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info id="npm" order="3" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -281,177 +295,65 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/anecdotes/public/manifest.json">
+    <entry file="file://$PROJECT_DIR$/blogs/src/controllers/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="28" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/src/hooks/hooksjs.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="50" column="14" selection-start-line="50" selection-start-column="8" selection-end-line="50" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/src/controllers/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="41" lean-forward="true" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="6" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/node_modules/@types/vfile/index.d.ts" />
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/About.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="89" selection-start-line="12" selection-start-column="89" selection-end-line="12" selection-end-column="89" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/Anecdote.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="30" lean-forward="true" selection-start-line="3" selection-start-column="30" selection-end-line="3" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/AnecdoteList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#50#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/Footer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/Menu.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/components/CreateNew.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="765">
-          <caret line="45" selection-start-line="45" selection-end-line="45" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/node_modules/d/test/lazy.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="25" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/App.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="8" lean-forward="true" selection-start-line="4" selection-start-column="8" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/Notification.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/SimpleBlog.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/utils/list_helper.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-561">
-          <caret line="3" column="39" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/utils/middleware.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/reducers/notificationReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="7" lean-forward="true" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/reducers/anecdoteReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="2" lean-forward="true" selection-end-line="31" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/anecdotes/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="7" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="22" selection-start-line="36" selection-start-column="22" selection-end-line="36" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/reducers/usersReducer.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogsform.js">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/blogs/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="4" lean-forward="true" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/controllers/blog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="35" column="15" selection-start-line="35" selection-start-column="15" selection-end-line="35" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/controllers/users.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="30" selection-start-line="5" selection-start-column="30" selection-end-line="5" selection-end-column="30" />
+          <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/Loginform.js">
+    <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="8" column="36" selection-start-line="8" selection-start-column="36" selection-end-line="8" selection-end-column="36" />
+        <state relative-caret-position="369">
+          <caret line="30" column="34" lean-forward="true" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/Togglable.js">
+    <entry file="file://$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="38" selection-start-line="20" selection-start-column="25" selection-end-line="20" selection-end-column="38" />
+        <state relative-caret-position="204">
+          <caret line="12" column="19" lean-forward="true" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogsform.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
           <folding>
             <element signature="e#0#37#0" expanded="true" />
           </folding>
@@ -460,42 +362,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/blogs/src/services/blogs.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="11" column="48" lean-forward="true" selection-start-line="11" selection-start-column="48" selection-end-line="11" selection-end-column="48" />
+        <state relative-caret-position="542">
+          <caret line="39" column="35" selection-start-line="39" selection-start-column="35" selection-end-line="39" selection-end-column="35" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/App.js">
+    <entry file="file://$PROJECT_DIR$/blogs/src/controllers/blog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="323">
+          <caret line="34" column="30" lean-forward="true" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blogs/src/reducers/blogReducer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="24" lean-forward="true" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/src/components/Blogs.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="18" column="18" lean-forward="true" selection-start-line="18" selection-start-column="18" selection-end-line="18" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="170">
+          <caret line="10" column="2" lean-forward="true" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="2" />
         </state>
       </provider>
     </entry>
