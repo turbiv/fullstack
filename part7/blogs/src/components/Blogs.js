@@ -22,23 +22,13 @@ const Blogs = (props) =>{
     blogService.setUser(userData)
   },[]);
 
-  const handleDeleteBlog = async (id, index, username) =>{
-    const result = window.confirm("Are you sure you want to delete a blog?");
-    const blogbyuser = (username === props.user.username);
-    if(result && blogbyuser) {
-      props.deleteBlogs(id)
-      //let newblogs = JSON.parse(JSON.stringify(blogs));
-      //newblogs.splice(index, 1);
-      //setBlogs(newblogs)
-    }
-  };
-
   const handleLike = async (id, likes, index) =>{
     await blogService.update(id, {likes});
     //let newblogs = JSON.parse(JSON.stringify(blogs));
     //newblogs[index].likes = likes + 1;
     //setBlogs(newblogs)
   };
+  console.log("CURRENT BLOG LIST:" , props.blogs)
 
   return(
     <div>
@@ -47,8 +37,8 @@ const Blogs = (props) =>{
       <Togglable label={"Create new blog"}>
         <BlogForm blogService={blogService} user={props.user}/>
       </Togglable>
-      {props.blogs.map((item, index) => <ExpandedBlogInfo blogService={blogService} key={index} handleDeleteBlog={handleDeleteBlog} handleLike={handleLike} blog={item}>
-        {item.title + " by " + item.author}</ExpandedBlogInfo>)}
+      {props.blogs.map((item, index) => <ExpandedBlogInfo key={index} user={props.user} handleLike={handleLike} blog={item}>
+        {item.title + " by " + item.author}</ExpandedBlogInfo>) }
     </div>
   )
 };

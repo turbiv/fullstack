@@ -1,5 +1,8 @@
 import React, {useState} from 'react'
 
+import {connect} from "react-redux"
+import {deleteBlogs} from "../reducers/blogReducer";
+
 const ExpandedBlogInfo = (props) =>{
   const [visible, setVisible] = useState(false);
 
@@ -17,7 +20,17 @@ const ExpandedBlogInfo = (props) =>{
   const toggleVisible = () =>{
     setVisible(!visible)
   };
-  console.log(props.key)
+
+  const handleDeleteBlog = async (id, username) =>{
+    const result = window.confirm("Are you sure you want to delete a blog?");
+    const blogbyuser = (username === props.user.username);
+    if(result && blogbyuser) {
+      props.deleteBlogs(id);
+      setVisible(false) //Strange bug in rendering expanded view. Expanded view will stay if pressed delete. Seems like only the data in the component changes but not the array element it self
+    }
+  };
+
+
   return(
     <div style={blogStyle}>
       <div style={basicInfoVisible} className={"DefaultBlogInfo"}>
@@ -28,11 +41,16 @@ const ExpandedBlogInfo = (props) =>{
         <p>{props.blog.url}</p>
         <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>props.handleLike(props.blog._id, props.blog.likes, props.key)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
-        <button onClick={() =>props.handleDeleteBlog(props.blog._id, props.key, props.blog.user.username)}>Delete</button>
+        <button onClick={() => handleDeleteBlog(props.blog._id , props.blog.user.username)}>Delete</button>
       </div>
     </div>
   )
 
 };
 
-export default ExpandedBlogInfo;
+const mapDispatcherToProps = {
+  deleteBlogs
+};
+
+const connectedExpandedBlogInfo = connect(null, mapDispatcherToProps)(ExpandedBlogInfo);
+export default connectedExpandedBlogInfo;

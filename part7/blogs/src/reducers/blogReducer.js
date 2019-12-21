@@ -2,7 +2,7 @@ import blogsService from "../services/blogs"
 
 export const createBlogs = (blog) =>{
   return async dispatch =>{
-    const content = await blogsService.postBlog(blog.url, blog.author, blog.title); //TODO: LATEST CHANGE HERE , ERROR DUE TO THIS, ID NOT PROVIDED WHEN BLOG IS CREATED
+    const content = await blogsService.postBlog(blog.url, blog.author, blog.title);
     dispatch({
       type: "CREATE",
       data: content
@@ -38,22 +38,28 @@ export const deleteBlogs = (id) =>{
 };
 
 const reducer = (state = [], action) =>{
-  console.log("action data: " , action.data)
-  console.log("state data: ", state)
+  console.log("action data: " , action.data);
+  console.log("action type:" , action.type);
+  console.log("state data before: ", state);
 
   switch (action.type) {
     case "VOTE":
+      //TODO NEXT
       return;
     case "CREATE":
       const newblogs = [...state, action.data];
       return newblogs.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
     case "INIT":
-      return action.data;
+      return action.data.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
     case "DELETE":
-      return state.map(blog => blog._id !== action.data.id ? blog : null).filter(x => x !== null);
+      console.log(state.map(blog => blog._id !== action.data.id ? blog : null).filter(x => x !== null));
+      return state.map(blog => blog._id !== action.data.id ? blog : null)
+        .filter(x => x !== null)
+        .sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
     default:
   }
 
+  console.log("default state: ", state);
   return state
 };
 

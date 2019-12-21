@@ -12,14 +12,8 @@ const BlogForm = (props) =>{
 
   const handleNewBlog = (event) =>{
     event.preventDefault();
-    const postblog = props.blogService.createAuth({url, author, title});
-    if(postblog === null){
-      return
-    }
+    props.createBlogs({title, author, url, user: props.user});
     props.createNotification("A new blog " + title + " by " + author + " was added!", 5);
-    if(postblog){
-      props.createBlogs({title, author, user: props.user});
-    }
   };
 
   return(

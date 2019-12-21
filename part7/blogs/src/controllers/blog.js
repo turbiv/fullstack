@@ -40,8 +40,8 @@ expressRouter.post('/', async (request, response) => {
   const saved = await blog.save();
   user.blogs = user.blogs.concat(saved._id);
   await user.save();
-
-  response.json(saved.toJSON())
+  const populatedblogs = await blog.populate("user", {passwordHash: 0, __v: 0, blogs: 0}).execPopulate()
+  response.json(populatedblogs.toJSON())
 });
 
 expressRouter.delete('/:id', async (request, response) => {
