@@ -10,9 +10,9 @@ export const createBlogs = (blog) =>{
   }
 };
 
-export const voteBlogs = (id) =>{
+export const likeBlogs = (id) =>{
   return{
-    type: "VOTE",
+    type: "LIKE",
     data: id
   }
 };
@@ -43,7 +43,7 @@ const reducer = (state = [], action) =>{
   console.log("state data before: ", state);
 
   switch (action.type) {
-    case "VOTE":
+    case "LIKE":
       //TODO NEXT
       return;
     case "CREATE":
