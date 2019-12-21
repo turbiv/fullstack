@@ -68,7 +68,8 @@ expressRouter.put('/:id', async (request, response) => {
   })
     .catch(error => response.status(400).send({error: error.message}));
 
-  response.status(200).json(updated.toJSON())
+  const populateupdated = await updated.populate("user", {passwordHash: 0, __v: 0, blogs: 0}).execPopulate();
+  response.status(200).json(populateupdated.toJSON())
 
 });
 

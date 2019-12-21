@@ -1,10 +1,14 @@
-import React, {useState} from 'react'
+import React from 'react'
 import  { useField } from '../hooks/hooksjs'
 import loginApi from "../services/login";
 import blogApi from "../services/blogs";
 
-const LoginForm = ({setNewUser}) =>{
-  const [notification, setNotification] = useState(null);
+import {setUser} from "../reducers/usersReducer";
+import {createNotification} from "../reducers/notificationReducer";
+
+import {connect} from "react-redux"
+
+const LoginForm = (props) =>{
   const password = useField("password");
   const username = useField("text");
 
@@ -12,31 +16,19 @@ const LoginForm = ({setNewUser}) =>{
     event.preventDefault();
     const loginuser = await loginApi.login(username.value, password.value);
     if(loginuser === null){
-      setNotification("Failed to login");
+      props.createNotification("Failed to login");
       return
     }
     window.localStorage.setItem(
       'loggedUser', JSON.stringify(loginuser)
     );
-    setNewUser(loginuser);
+    props.setUser(loginuser);
     blogApi.setToken(loginuser.token);
-  };
-
-  const DisplayNotification = () =>{
-    setTimeout(()=>{
-      setNotification(null)
-    }, 5000);
-
-    return(
-      <div>
-        <p>{notification}</p>
-      </div>
-    )
   };
 
   return(
     <div>
-      <DisplayNotification />
+      {props.notification}
       Please login
       <form onSubmit={handleLogin}>
         <div>
@@ -51,4 +43,17 @@ const LoginForm = ({setNewUser}) =>{
   )
 };
 
-export default LoginForm
+const mapDispatchToProps = {
+  setUser,
+  createNotification
+};
+
+const mapStateToProps = (state) =>{
+  return{
+    user: state.user,
+    notification: state.notification
+  }
+};
+
+const connectedLoginForm = connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connectedLoginForm

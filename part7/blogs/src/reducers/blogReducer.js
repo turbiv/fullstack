@@ -10,10 +10,13 @@ export const createBlogs = (blog) =>{
   }
 };
 
-export const likeBlogs = (id) =>{
-  return{
-    type: "LIKE",
-    data: id
+export const likeBlogs = (id, likes) =>{
+  return async dispatch =>{
+    const content = await blogsService.putBlogLike(id, likes + 1);
+    dispatch({
+      type: "LIKE",
+      data: content
+    })
   }
 };
 
@@ -44,18 +47,16 @@ const reducer = (state = [], action) =>{
 
   switch (action.type) {
     case "LIKE":
-      //TODO NEXT
-      return;
+      const updateLikes = state.map(item => item._id !== action.data._id ? item : null)
+        .filter(x => x !== null);
+      return [...updateLikes, action.data];
     case "CREATE":
-      const newblogs = [...state, action.data];
-      return newblogs.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
+      return [...state, action.data];
     case "INIT":
-      return action.data.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
+      return action.data;
     case "DELETE":
-      console.log(state.map(blog => blog._id !== action.data.id ? blog : null).filter(x => x !== null));
       return state.map(blog => blog._id !== action.data.id ? blog : null)
-        .filter(x => x !== null)
-        .sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1);
+        .filter(x => x !== null);
     default:
   }
 

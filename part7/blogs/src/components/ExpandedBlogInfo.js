@@ -1,7 +1,7 @@
 import React, {useState} from 'react'
 
 import {connect} from "react-redux"
-import {deleteBlogs} from "../reducers/blogReducer";
+import {deleteBlogs, likeBlogs} from "../reducers/blogReducer";
 
 const ExpandedBlogInfo = (props) =>{
   const [visible, setVisible] = useState(false);
@@ -30,6 +30,9 @@ const ExpandedBlogInfo = (props) =>{
     }
   };
 
+  const handleLike = async (id, likes) =>{
+    props.likeBlogs(id, likes)
+  };
 
   return(
     <div style={blogStyle}>
@@ -39,7 +42,7 @@ const ExpandedBlogInfo = (props) =>{
       <div style={extraInfoVisible} className={"ExtraBlogInfo"}>
         <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
         <p>{props.blog.url}</p>
-        <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>props.handleLike(props.blog._id, props.blog.likes, props.key)}>Like</button></p>
+        <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>handleLike(props.blog._id, props.blog.likes)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
         <button onClick={() => handleDeleteBlog(props.blog._id , props.blog.user.username)}>Delete</button>
       </div>
@@ -48,9 +51,16 @@ const ExpandedBlogInfo = (props) =>{
 
 };
 
-const mapDispatcherToProps = {
-  deleteBlogs
+const mapStateToProps = (state) =>{
+  return{
+    user: state.user
+  }
 };
 
-const connectedExpandedBlogInfo = connect(null, mapDispatcherToProps)(ExpandedBlogInfo);
+const mapDispatcherToProps = {
+  deleteBlogs,
+  likeBlogs
+};
+
+const connectedExpandedBlogInfo = connect(mapStateToProps, mapDispatcherToProps)(ExpandedBlogInfo);
 export default connectedExpandedBlogInfo;

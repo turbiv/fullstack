@@ -1,45 +1,51 @@
-import React, { useState, useEffect } from 'react'
-import blogApi from "./services/blogs";
+import React, {useEffect } from 'react'
 import LoginForm from "./components/Loginform"
 import Blogs from "./components/Blogs"
 
-const App = () =>{
-  const [user, setUser] = useState(null);
+import {setUser, removeUser} from "./reducers/usersReducer";
+import {connect} from "react-redux"
 
-  const setNewUser = (newuser) =>{
-    setUser(newuser)
-  };
-
+const App = (props) =>{
   useEffect(() => {
     const browserStorage = window.localStorage.getItem("loggedUser");
     if(browserStorage){
       const user = JSON.parse(browserStorage);
-      setUser(user);
-      blogApi.setToken(user.token)
+      props.setUser(user)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   const handleLogout = () =>{
-    setUser(null);
-    window.localStorage.removeItem("loggedUser");
-    blogApi.setToken("")
+    props.removeUser(null);
   };
 
-  if(user === null){
+  if(props.user === null){
     return(
       <div className={"login"}>
-        <LoginForm setNewUser={setNewUser}/>
+        <LoginForm/>
       </div>
     )
   }else{
     return(
       <div>
         <h2>Blogs</h2>
-        {user.name} logged in <button onClick={handleLogout}>Logout</button>
-        <Blogs user={user}/>
+        {props.user.name} logged in <button onClick={handleLogout}>Logout</button>
+        <Blogs/>
       </div>
     )
   }
 };
 
-export default App
+const mapDispatchToProps = {
+  setUser,
+  removeUser
+};
+
+const mapStateToProps = (state) =>{
+  return{
+    user: state.user
+  }
+};
+
+const connectedApp = connect(mapStateToProps, mapDispatchToProps)(App);
+export default connectedApp

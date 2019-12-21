@@ -1,43 +1,29 @@
-import React, {useState, useEffect} from 'react'
+import React, {useEffect} from 'react'
 import {connect} from "react-redux"
 
 import Togglable from "./Togglable";
 import BlogForm from "./Blogsform";
 import ExpandedBlogInfo from "./ExpandedBlogInfo"
-import {useResource} from "../hooks/hooksjs";
 
 import {createNotification} from "../reducers/notificationReducer"
 import {initializeBlogs, createBlogs, deleteBlogs} from "../reducers/blogReducer";
 
 const Blogs = (props) =>{
-  const [user, blogService] = useResource("http://localhost:3003/api/blogs/");
-
-  useEffect(() =>{
-    props.initializeBlogs();
-  },[]);
-
   useEffect(() => {
-    const browserStorage = window.localStorage.getItem("loggedUser");
-    const userData = JSON.parse(browserStorage);
-    blogService.setUser(userData)
+    props.initializeBlogs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
-  const handleLike = async (id, likes, index) =>{
-    await blogService.update(id, {likes});
-    //let newblogs = JSON.parse(JSON.stringify(blogs));
-    //newblogs[index].likes = likes + 1;
-    //setBlogs(newblogs)
-  };
-  console.log("CURRENT BLOG LIST:" , props.blogs)
+  console.log("CURRENT BLOG LIST:" , props.blogs);
 
   return(
     <div>
       <h3>Create</h3>
       {props.notification}
       <Togglable label={"Create new blog"}>
-        <BlogForm blogService={blogService} user={props.user}/>
+        <BlogForm/>
       </Togglable>
-      {props.blogs.map((item, index) => <ExpandedBlogInfo key={index} user={props.user} handleLike={handleLike} blog={item}>
+      {props.blogs.sort((itema, itemb) => (itema.likes < itemb.likes) ? 1 : -1).map((item, index) => <ExpandedBlogInfo key={index} blog={item}>
         {item.title + " by " + item.author}</ExpandedBlogInfo>) }
     </div>
   )

@@ -34,10 +34,16 @@ const BlogForm = (props) =>{
   )
 };
 
+const mapStateToProps = (state) =>{
+  return{
+    user: state.user
+  }
+};
+
 const mapDispatchToProps = {
   createNotification,
   createBlogs
 };
 
-const connectedBlogForm = connect(null, mapDispatchToProps)(BlogForm);
+const connectedBlogForm = connect(mapStateToProps, mapDispatchToProps)(BlogForm);
 export default connectedBlogForm
