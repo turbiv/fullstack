@@ -37,7 +37,7 @@ const SingleBlog = (props) =>{
       <form onSubmit={handleNewComment}>
         <input value={comment} onChange={({target}) => setComment(target.value)}/> <button type={"submit"}>Add Comment</button>
       </form>
-      {props.blog.comments.map(comment => <p>{comment}</p>)}
+      {props.blog.comments.map((comment, index) => <li key={index}>{comment}</li>)}
     </div>
   )
 };
