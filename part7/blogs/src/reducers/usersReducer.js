@@ -1,32 +1,19 @@
-import blogApi from "../services/blogs";
+import usersService from "../services/users"
 
-export const setUser = (user) =>{
+export const initializeUsers = (blog) =>{
   return async dispatch =>{
-    blogApi.setToken(user.token);
+    const content = await usersService.getAll();
     dispatch({
-      type: "SET_USER",
-      data: user
+      type: "INITIALIZE",
+      data: content
     })
   }
 };
 
-export const removeUser = () =>{
-  return async dispatch =>{
-    blogApi.setToken("");
-    window.localStorage.removeItem("loggedUser");
-    dispatch({
-      type: "REMOVE_USER",
-      data: ""
-    })
-  }
-};
-
-const reducer = (state = null, action) =>{
+const reducer = (state = [], action) =>{
   switch (action.type) {
-    case "SET_USER":
+    case "INITIALIZE":
       return action.data;
-    case "REMOVE_USER":
-      return null;
     default:
   }
 

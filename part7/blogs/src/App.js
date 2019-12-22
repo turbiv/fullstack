@@ -4,8 +4,10 @@ import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-
 import LoginForm from "./components/Loginform"
 import Blogs from "./components/Blogs"
 import Users from "./components/Users"
+import SingleUser from "./components/SingleUser"
+import SingleBlog from "./components/SingleBlog"
 
-import {setUser, removeUser} from "./reducers/usersReducer";
+import {setUser, removeUser} from "./reducers/loginReducer";
 import {connect} from "react-redux"
 
 const App = (props) =>{
@@ -22,9 +24,13 @@ const App = (props) =>{
     props.removeUser(null);
   };
 
-  const padding = { padding: 5 }
+  const padding = { padding: 5 };
 
-  if(props.user === null){
+  const findUserById = (id) => props.users.find(item => item.id === id);
+
+  const findBlogById = (id) => props.blogs.find(item => item._id === id);
+
+  if(props.login === null){
     return(
       <div className={"login"}>
         <LoginForm/>
@@ -34,7 +40,7 @@ const App = (props) =>{
     return(
       <div>
         <h2>Blogs</h2>
-        {props.user.name} logged in <button onClick={handleLogout}>Logout</button>
+        {props.login.name} logged in <button onClick={handleLogout}>Logout</button>
         <Router>
           <div>
             <Link style={padding} to={"/"}>Home</Link>
@@ -42,6 +48,8 @@ const App = (props) =>{
           </div>
           <Route exact path={"/"} render={() => <Blogs/>}/>
           <Route exact path={"/users"} render={() => <Users/>}/>
+          <Route exact path={"/users/:id"} render={({match}) => <SingleUser user={findUserById(match.params.id)}/>}/>
+          <Route exact path={"/blogs/:id"} render={({match}) => <SingleBlog blog={findBlogById(match.params.id)}/>}/>
         </Router>
       </div>
     )
@@ -55,7 +63,9 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) =>{
   return{
-    user: state.user
+    login: state.login,
+    users: state.users,
+    blogs: state.blogs
   }
 };
 

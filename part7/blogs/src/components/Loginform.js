@@ -3,7 +3,7 @@ import  { useField } from '../hooks/hooksjs'
 import loginApi from "../services/login";
 import blogApi from "../services/blogs";
 
-import {setUser} from "../reducers/usersReducer";
+import {setUser} from "../reducers/loginReducer";
 import {createNotification} from "../reducers/notificationReducer";
 
 import {connect} from "react-redux"
@@ -50,7 +50,7 @@ const mapDispatchToProps = {
 
 const mapStateToProps = (state) =>{
   return{
-    user: state.user,
+    login: state.login,
     notification: state.notification
   }
 };

@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 
 import {connect} from "react-redux"
 import {deleteBlogs, likeBlogs} from "../reducers/blogReducer";
@@ -37,12 +38,12 @@ const ExpandedBlogInfo = (props) =>{
   return(
     <div style={blogStyle}>
       <div style={basicInfoVisible} className={"DefaultBlogInfo"}>
-        <p>{props.children}  <button onClick={toggleVisible}>Expand</button></p>
+        <p><Link to={"/blogs/" + props.blog._id}>{props.children}</Link>  <button onClick={toggleVisible}>Expand</button></p>
       </div>
       <div style={extraInfoVisible} className={"ExtraBlogInfo"}>
-        <p>{props.children}  <button onClick={toggleVisible}>Minimize</button></p>
+        <p><Link to={"/blogs/" + props.blog._id}>{props.children}</Link>  <button onClick={toggleVisible}>Minimize</button></p>
         <p>{props.blog.url}</p>
-        <p>{props.blog.likes} likes <button key={props.hooks} onClick={() =>handleLike(props.blog._id, props.blog.likes)}>Like</button></p>
+        <p>{props.blog.likes} likes <button onClick={() => handleLike(props.blog._id, props.blog.likes)}>Like</button></p>
         <p>Added by {props.blog.user.name}</p>
         <button onClick={() => handleDeleteBlog(props.blog._id , props.blog.user.username)}>Delete</button>
       </div>
