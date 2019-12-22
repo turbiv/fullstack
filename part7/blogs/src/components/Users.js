@@ -16,7 +16,7 @@ const Users = (props) =>{
   return(
     <div>
       <h2>Users</h2>
-      {props.users.map(user => <li><Link to={"/users/" + user.id}>{user.name}</Link> {user.blogs.length} blogs</li>)}
+      {props.users.map((user, index) => <li key={index}><Link to={"/users/" + user.id}>{user.name}</Link> {user.blogs.length} blogs</li>)}
     </div>
   )
 };

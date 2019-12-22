@@ -9,7 +9,7 @@ const SingleUsers = (props) =>{
     <div>
       <h2>{props.user.name}</h2>
       <h3>Added blogs</h3>
-      {props.user.blogs.map(item => <li>{item.title}</li>)}
+      {props.user.blogs.map((item, index) => <li key={index}>{item.title}</li>)}
     </div>
   )
 };
