@@ -1,5 +1,6 @@
 import React, {useEffect } from 'react'
 import {BrowserRouter as Router, Route, Link, withRouter} from 'react-router-dom'
+import {Navbar, Nav, Container} from "react-bootstrap";
 
 import LoginForm from "./components/Loginform"
 import Blogs from "./components/Blogs"
@@ -27,6 +28,7 @@ const App = (props) =>{
   };
 
   const padding = { padding: 5 };
+  const appPadding = {padding: 10};
 
   const findUserById = (id) => props.users.find(item => item.id === id);
 
@@ -40,20 +42,26 @@ const App = (props) =>{
     )
   }else{
     return(
-      <div>
-        <h2>Blogs</h2>
-        {props.login.name} logged in <button onClick={handleLogout}>Logout</button>
-        <Router>
-          <div>
-            <Link style={padding} to={"/"}>Home</Link>
-            <Link style={padding} to={"/users"}>Users</Link>
-          </div>
-          <Route exact path={"/"} render={() => <Blogs/>}/>
-          <Route exact path={"/users"} render={() => <Users/>}/>
-          <Route exact path={"/users/:id"} render={({match}) => <SingleUser user={findUserById(match.params.id)}/>}/>
-          <Route exact path={"/blogs/:id"} render={({match}) => <NewSingleBlog blog={findBlogById(match.params.id)}/>}/>
-        </Router>
-      </div>
+      <Container className="justify-content-md-center">
+        <div style={appPadding}>
+          <h2>Blogs</h2>
+          {props.login.name} logged in <button onClick={handleLogout}>Logout</button>
+          <Router>
+            <div>
+              <Navbar bg={"dark"} variant={"dark"}>
+                <Nav className={"mr-auto"}>
+                <Link style={padding} to={"/"}>Home</Link>
+                <Link style={padding} to={"/users"}>Users</Link>
+                </Nav>
+              </Navbar>
+            </div>
+            <Route exact path={"/"} render={() => <Blogs/>}/>
+            <Route exact path={"/users"} render={() => <Users/>}/>
+            <Route exact path={"/users/:id"} render={({match}) => <SingleUser user={findUserById(match.params.id)}/>}/>
+            <Route exact path={"/blogs/:id"} render={({match}) => <NewSingleBlog blog={findBlogById(match.params.id)}/>}/>
+          </Router>
+        </div>
+      </Container>
     )
   }
 };

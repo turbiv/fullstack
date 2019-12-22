@@ -1,3 +1,5 @@
+import React from "react"
+import {Alert} from "react-bootstrap";
 const initalState = "";
 
 export const createNotification = (notification, timeout) => {
@@ -24,7 +26,7 @@ const reducer = (state = initalState, action) =>{
 
   switch (action.type) {
     case "SET_NOTIFICATION":
-      return action.data.notification;
+      return <Alert variant="success">{action.data.notification}</Alert>;
     case "REMOVE_NOTIFICATION":
       return "";
     default:

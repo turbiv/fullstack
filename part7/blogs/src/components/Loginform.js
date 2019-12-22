@@ -1,5 +1,6 @@
 import React from 'react'
 import  { useField } from '../hooks/hooksjs'
+import {Form, Button, Row, Col} from "react-bootstrap"
 import loginApi from "../services/login";
 import blogApi from "../services/blogs";
 
@@ -27,18 +28,24 @@ const LoginForm = (props) =>{
   };
 
   return(
-    <div>
-      {props.notification}
-      Please login
-      <form onSubmit={handleLogin}>
-        <div>
-          Username: <input {...username}/>
-        </div>
-        <div>
-          Password: <input {...password}/>
-        </div>
-        <button type="submit">Login</button>
-      </form>
+    <div style={{padding: 20}}>
+        {props.notification}
+        Please login
+      <Form onSubmit={handleLogin}>
+        <Form.Group as={Row}>
+          <Form.Label column sm={1}>Username:</Form.Label>
+          <Col sm={"3"}>
+            <Form.Control {...username}/>
+          </Col>
+        </Form.Group>
+        <Form.Group as={Row}>
+          <Form.Label column sm={1}>Password:</Form.Label>
+          <Col sm="3">
+            <Form.Control {...password}/>
+          </Col>
+        </Form.Group>
+        <Button variant={"primary"} type={"submit"}>Login</Button>
+      </Form>
     </div>
   )
 };

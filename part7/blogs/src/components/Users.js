@@ -1,6 +1,7 @@
 import React, {useEffect} from "react"
 import {connect} from "react-redux"
 import {Link} from 'react-router-dom'
+import {Table} from "react-bootstrap"
 
 import {initializeUsers} from "../reducers/usersReducer";
 
@@ -16,7 +17,11 @@ const Users = (props) =>{
   return(
     <div>
       <h2>Users</h2>
-      {props.users.map((user, index) => <li key={index}><Link to={"/users/" + user.id}>{user.name}</Link> {user.blogs.length} blogs</li>)}
+      <Table striped bordered hover variant="dark">
+        <tbody>
+      {props.users.map((user, index) => <tr key={index}><td><Link to={"/users/" + user.id}>{user.name}</Link></td><td> {user.blogs.length} blogs</td></tr>)}
+        </tbody>
+      </Table>
     </div>
   )
 };
