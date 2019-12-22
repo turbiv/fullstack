@@ -1,5 +1,5 @@
 import React, {useEffect } from 'react'
-import {BrowserRouter as Router, Route, Link, Redirect, withRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, withRouter} from 'react-router-dom'
 
 import LoginForm from "./components/Loginform"
 import Blogs from "./components/Blogs"
@@ -9,6 +9,8 @@ import SingleBlog from "./components/SingleBlog"
 
 import {setUser, removeUser} from "./reducers/loginReducer";
 import {connect} from "react-redux"
+
+const NewSingleBlog = withRouter(SingleBlog);
 
 const App = (props) =>{
   useEffect(() => {
@@ -49,7 +51,7 @@ const App = (props) =>{
           <Route exact path={"/"} render={() => <Blogs/>}/>
           <Route exact path={"/users"} render={() => <Users/>}/>
           <Route exact path={"/users/:id"} render={({match}) => <SingleUser user={findUserById(match.params.id)}/>}/>
-          <Route exact path={"/blogs/:id"} render={({match}) => <SingleBlog blog={findBlogById(match.params.id)}/>}/>
+          <Route exact path={"/blogs/:id"} render={({match}) => <NewSingleBlog blog={findBlogById(match.params.id)}/>}/>
         </Router>
       </div>
     )

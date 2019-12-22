@@ -20,6 +20,16 @@ export const likeBlogs = (id, likes) =>{
   }
 };
 
+export const addComment = (blog, comment) =>{
+  return async dispatch =>{
+    const content = await blogsService.addComment(blog._id, blog.comments.concat(comment));
+    dispatch({
+      type: "ADDCOMMENT",
+      data: content
+    })
+  }
+};
+
 export const initializeBlogs = () =>{
   return async dispatch =>{
     const content = await blogsService.getAll();
@@ -57,6 +67,10 @@ const reducer = (state = [], action) =>{
     case "DELETE":
       return state.map(blog => blog._id !== action.data.id ? blog : null)
         .filter(x => x !== null);
+    case "ADDCOMMENT":
+      const oldState = state.map(item => item._id !== action.data._id ? item : null)
+        .filter(x => x !== null);
+      return [...oldState, action.data];
     default:
   }
 

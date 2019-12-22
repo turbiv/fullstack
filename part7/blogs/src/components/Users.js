@@ -8,6 +8,7 @@ const Users = (props) =>{
 
   useEffect(()=>{
     props.initializeUsers()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
 
   console.log(props.users);

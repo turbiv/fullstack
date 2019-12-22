@@ -73,4 +73,17 @@ expressRouter.put('/:id', async (request, response) => {
 
 });
 
+expressRouter.put('/:id/comments', async (request, response) => {
+  const comments = {comments: request.body.comments};
+
+  const updated = await mongoBlog.findByIdAndUpdate(request.params.id, comments, {
+    new: true,
+    runValidators: true,
+    context: "query"
+  })
+    .catch(error => response.status(400).send({error: error.message}));
+  const populateupdated = await updated.populate("user", {passwordHash: 0, __v: 0, blogs: 0}).execPopulate();
+  response.status(200).json(populateupdated.toJSON())
+});
+
 module.exports = expressRouter;
