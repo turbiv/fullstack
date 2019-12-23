@@ -2,30 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ae2f329b-8fb2-4772-bf2e-ce2eeb7b5ae7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/blogs/cypress/integration/blog_app_spec.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blogs/src/controllers/testing.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/blogs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/backend.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/backend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/Blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Blogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/Blogsform.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Blogsform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/ExpandedBlogInfo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/Loginform.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Loginform.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/SingleBlog.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/SingleBlog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/SingleUser.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/SingleUser.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/components/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/components/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/controllers/blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/controllers/blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/models/mongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/models/mongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/blogReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/loginReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/loginReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/notificationReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/reducers/usersReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/reducers/usersReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/services/blogs.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/services/blogs.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/blogs/src/services/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/blogs/src/services/users.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,7 +17,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/blogs/package.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="323">
@@ -47,11 +26,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/blogs/cypress/integration/blog_app_spec.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+            <state relative-caret-position="510">
+              <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/blogs/.eslintrc.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -60,7 +48,7 @@
         <entry file="file://$PROJECT_DIR$/blogs/src/components/Users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+              <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -72,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/blogs/src/backend.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+              <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -90,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/blogs/src/controllers/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+              <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -142,9 +130,10 @@
         <option value="$PROJECT_DIR$/blogs/src/controllers/cypress.js" />
         <option value="$PROJECT_DIR$/blogs/src/controllers/testing.js" />
         <option value="$PROJECT_DIR$/blogs/src/backend.js" />
-        <option value="$PROJECT_DIR$/blogs/package.json" />
         <option value="$PROJECT_DIR$/blogs/src/components/Users.js" />
         <option value="$PROJECT_DIR$/blogs/cypress/integration/blog_app_spec.js" />
+        <option value="$PROJECT_DIR$/blogs/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/blogs/package.json" />
       </list>
     </option>
   </component>
@@ -172,19 +161,6 @@
               <item name="part7" type="b2602c69:ProjectViewProjectNode" />
               <item name="part7" type="462c0819:PsiDirectoryNode" />
               <item name="blogs" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="part7" type="462c0819:PsiDirectoryNode" />
-              <item name="blogs" type="462c0819:PsiDirectoryNode" />
-              <item name="cypress" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="part7" type="b2602c69:ProjectViewProjectNode" />
-              <item name="part7" type="462c0819:PsiDirectoryNode" />
-              <item name="blogs" type="462c0819:PsiDirectoryNode" />
-              <item name="cypress" type="462c0819:PsiDirectoryNode" />
-              <item name="integration" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="part7" type="b2602c69:ProjectViewProjectNode" />
@@ -240,6 +216,9 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\fullstack\part7\blogs" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\__GIT\fullstack\part7\blogs\src\components" />
     </key>
@@ -271,13 +250,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47286000" />
+    <option name="totallyTimeSpent" value="47736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49925262" visible="true" weight="0.24973656" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49925262" visible="true" weight="0.24973656" />
       <window_info id="Structure" order="1" sideWeight="0.5007474" side_tool="true" weight="0.24973656" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="npm" order="3" side_tool="true" />
@@ -290,7 +269,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49947312" visible="true" weight="0.2751896" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49947312" visible="true" weight="0.2751896" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50052685" side_tool="true" weight="0.2751896" />
       <window_info anchor="bottom" id="TypeScript" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -534,7 +513,7 @@
     <entry file="file://$PROJECT_DIR$/blogs/src/controllers/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
-          <caret line="5" column="53" lean-forward="true" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
+          <caret line="5" column="53" selection-start-line="5" selection-start-column="53" selection-end-line="5" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -542,13 +521,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="26" selection-start-line="4" selection-start-column="26" selection-end-line="4" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/blogs/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -562,7 +534,7 @@
     <entry file="file://$PROJECT_DIR$/blogs/src/components/Users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
-          <caret line="16" column="9" lean-forward="true" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
+          <caret line="16" column="9" selection-start-line="16" selection-start-column="9" selection-end-line="16" selection-end-column="9" />
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
@@ -572,14 +544,28 @@
     <entry file="file://$PROJECT_DIR$/blogs/src/backend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="16" lean-forward="true" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/blogs/cypress/integration/blog_app_spec.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="38" column="61" lean-forward="true" selection-start-line="38" selection-start-column="61" selection-end-line="38" selection-end-column="61" />
+        <state relative-caret-position="510">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/.eslintrc.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="16" lean-forward="true" selection-start-line="20" selection-start-column="16" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/blogs/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="22" column="4" lean-forward="true" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
         </state>
       </provider>
     </entry>
