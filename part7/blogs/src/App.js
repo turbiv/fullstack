@@ -28,7 +28,6 @@ const App = (props) =>{
   };
 
   const padding = { padding: 5 };
-  const appPadding = {padding: 10};
 
   const findUserById = (id) => props.users.find(item => item.id === id);
 
@@ -43,7 +42,7 @@ const App = (props) =>{
   }else{
     return(
       <Container className="justify-content-md-center">
-        <div style={appPadding}>
+        <div>
           <h2>Blogs</h2>
           {props.login.name} logged in <button onClick={handleLogout}>Logout</button>
           <Router>
