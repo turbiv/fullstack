@@ -22,11 +22,13 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
+    "cypress:open": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "watch": "cross-env NODE_ENV=dev nodemon src\\backend.js",
-    "test": "cross-env NODE_ENV=test jest --verbose"
+    "test": "cross-env NODE_ENV=test jest --verbose",
+    "start:test": "cross-env NODE_ENV=test nodemon src\\backend.js"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -47,6 +49,7 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "cross-env": "^6.0.3",
+    "cypress": "^3.8.0",
     "nodemon": "^1.19.3",
     "supertest": "^4.0.2"
   }

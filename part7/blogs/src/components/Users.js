@@ -19,7 +19,7 @@ const Users = (props) =>{
       <h2>Users</h2>
       <Table striped bordered hover variant="dark">
         <tbody>
-      {props.users.map((user, index) => <tr key={index}><td><Link to={"/users/" + user.id}>{user.name}</Link></td><td> {user.blogs.length} blogs</td></tr>)}
+      {props.users.map((user, index) => <tr key={index}><td><Link id={user.username} to={"/users/" + user.id}>{user.name}</Link></td><td> {user.blogs.length} blogs</td></tr>)}
         </tbody>
       </Table>
     </div>

@@ -20,13 +20,13 @@ const BlogForm = (props) =>{
     <div>
       <form onSubmit={handleNewBlog}>
         <div>
-          Title: <input value={title} type={"text"} onChange={({target}) => setTitle(target.value)}/>
+          Title: <input id={"title"} value={title} type={"text"} onChange={({target}) => setTitle(target.value)}/>
         </div>
         <div>
-          Author: <input value={author} type={"text"} onChange={({target}) => setAuthor(target.value)}/>
+          Author: <input id={"author"} value={author} type={"text"} onChange={({target}) => setAuthor(target.value)}/>
         </div>
         <div>
-          Url: <input value={url} type={"text"} onChange={({target}) => setUrl(target.value)}/>
+          Url: <input id={"url"} value={url} type={"text"} onChange={({target}) => setUrl(target.value)}/>
         </div>
         <button type="submit">Submit</button>
       </form>
