@@ -2,24 +2,9 @@ import React, { useState } from 'react'
 import Authors from './components/Authors'
 import Books from './components/Books'
 import NewBook from './components/NewBook'
-import { gql } from 'apollo-boost'
-import {useQuery} from "@apollo/react-hooks"
-
-const ALLAUTHORS = gql`
-{
-  allAuthors {
-    name
-    born
-    bookCount
-  }
-}
-`;
-
 
 const App = () => {
   const [page, setPage] = useState('authors');
-  const authors = useQuery(ALLAUTHORS);
-  console.log(authors.data)
 
   return (
     <div>
@@ -31,7 +16,6 @@ const App = () => {
 
       <Authors
         show={page === 'authors'}
-        authors={authors.data}
       />
 
       <Books
